@@ -1,0 +1,12 @@
+C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection\obj\Debug\net8.0\LuminCollection.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection\obj\Debug\net8.0\LuminCollection.AssemblyInfoInputs.cache
+C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection\obj\Debug\net8.0\LuminCollection.AssemblyInfo.cs
+C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection\obj\Debug\net8.0\LuminCollection.csproj.CoreCompileInputs.cache
+C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection\bin\Debug\net8.0\LuminCollection.deps.json
+C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection\bin\Debug\net8.0\LuminCollection.dll
+C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection\bin\Debug\net8.0\LuminCollection.pdb
+C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection\obj\Debug\net8.0\LuminCollection.dll
+C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection\obj\Debug\net8.0\refint\LuminCollection.dll
+C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection\obj\Debug\net8.0\LuminCollection.pdb
+C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection\obj\Debug\net8.0\ref\LuminCollection.dll
+C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection\obj\Debug\net8.0\LuminCollection.csproj.AssemblyReference.cache

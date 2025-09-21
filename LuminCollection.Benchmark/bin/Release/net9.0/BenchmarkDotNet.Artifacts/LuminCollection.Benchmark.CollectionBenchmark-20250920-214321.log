@@ -1,0 +1,76 @@
+// Validating benchmarks:
+// ***** BenchmarkRunner: Start   *****
+// ***** Found 4 benchmark(s) in total *****
+// ***** Building 1 exe(s) in Parallel: Start   *****
+// start dotnet  restore --nodeReuse:false /p:UseSharedCompilation=false /p:Deterministic=true /p:Optimize=true /p:ArtifactsPath="C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1/" /p:OutDir="C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\bin\Release\net9.0/" /p:OutputPath="C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\bin\Release\net9.0/" /p:PublishDir="C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\publish/" in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1
+// command took 2.6 sec and exited with 0
+// start dotnet  build -c Release --no-restore --nodeReuse:false /p:UseSharedCompilation=false /p:Deterministic=true /p:Optimize=true /p:ArtifactsPath="C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1/" /p:OutDir="C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\bin\Release\net9.0/" /p:OutputPath="C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\bin\Release\net9.0/" /p:PublishDir="C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\publish/" --output "C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\bin\Release\net9.0/" in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1
+// command took 8.29 sec and exited with 0
+// ***** Done, took 00:00:11 (11.08 sec)   *****
+// Found 4 benchmarks:
+//   CollectionBenchmark.SequentialAdd_LuminList: .NET 9.0(Runtime=.NET 9.0)
+//   CollectionBenchmark.SequentialAdd_LuminSafeList: .NET 9.0(Runtime=.NET 9.0)
+//   CollectionBenchmark.SequentialAdd_UnsafeList: .NET 9.0(Runtime=.NET 9.0)
+//   CollectionBenchmark.SequentialAdd_BclList: .NET 9.0(Runtime=.NET 9.0)
+
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: 高性能)
+// **************************
+// Benchmark: CollectionBenchmark.SequentialAdd_LuminList: .NET 9.0(Runtime=.NET 9.0)
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "LuminCollection.Benchmark-.NET 9.0-1.dll" --anonymousPipes 1140 1176 --benchmarkName LuminCollection.Benchmark.CollectionBenchmark.SequentialAdd_LuminList --job ".NET 9.0" --benchmarkId 0 in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\bin\Release\net9.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.15.3
+// Runtime=.NET 9.0.3 (9.0.3, 9.0.325.11113), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL,AvxVnni,SERIALIZE VectorSize=256
+// Job: .NET 9.0
+
+OverheadJitting  1: 1 op, 92200.00 ns, 92.2000 us/op
+WorkloadJitting  1: 1 op, 43554900.00 ns, 43.5549 ms/op
+
+WorkloadPilot    1: 2 op, 1273800.00 ns, 636.9000 us/op
+WorkloadPilot    2: 3 op, 1774400.00 ns, 591.4667 us/op
+WorkloadPilot    3: 4 op, 2409200.00 ns, 602.3000 us/op
+WorkloadPilot    4: 5 op, 2948900.00 ns, 589.7800 us/op
+WorkloadPilot    5: 6 op, 3655600.00 ns, 609.2667 us/op
+WorkloadPilot    6: 7 op, 4218300.00 ns, 602.6143 us/op
+WorkloadPilot    7: 8 op, 5074700.00 ns, 634.3375 us/op
+WorkloadPilot    8: 9 op, 5407800.00 ns, 600.8667 us/op
+WorkloadPilot    9: 10 op, 6419100.00 ns, 641.9100 us/op
+WorkloadPilot   10: 11 op, 9252500.00 ns, 841.1364 us/op
+WorkloadPilot   11: 12 op, 7120300.00 ns, 593.3583 us/op
+WorkloadPilot   12: 13 op, 7617100.00 ns, 585.9308 us/op
+WorkloadPilot   13: 14 op, 8171600.00 ns, 583.6857 us/op
+WorkloadPilot   14: 15 op, 9262500.00 ns, 617.5000 us/op
+WorkloadPilot   15: 16 op, 9354100.00 ns, 584.6313 us/op
+WorkloadPilot   16: 32 op, 18495900.00 ns, 577.9969 us/op
+WorkloadPilot   17: 64 op, 37975000.00 ns, 593.3594 us/op
+WorkloadPilot   18: 128 op, 75551400.00 ns, 590.2453 us/op
+WorkloadPilot   19: 256 op, 159931500.00 ns, 624.7324 us/op
+WorkloadPilot   20: 512 op, 303128400.00 ns, 592.0477 us/op
+WorkloadPilot   21: 1024 op, 592859300.00 ns, 578.9642 us/op
+
+WorkloadWarmup   1: 1024 op, 587397000.00 ns, 573.6299 us/op
+WorkloadWarmup   2: 1024 op, 593787500.00 ns, 579.8706 us/op
+WorkloadWarmup   3: 1024 op, 592200300.00 ns, 578.3206 us/op
+WorkloadWarmup   4: 1024 op, 611854500.00 ns, 597.5142 us/op
+WorkloadWarmup   5: 1024 op, 603871000.00 ns, 589.7178 us/op
+WorkloadWarmup   6: 1024 op, 593995600.00 ns, 580.0738 us/op
+
+// BeforeActualRun
+WorkloadActual   1: 1024 op, 615003900.00 ns, 600.5897 us/op
+WorkloadActual   2: 1024 op, 603742100.00 ns, 589.5919 us/op
+WorkloadActual   3: 1024 op, 589214800.00 ns, 575.4051 us/op
+WorkloadActual   4: 1024 op, 596948300.00 ns, 582.9573 us/op
+WorkloadActual   5: 1024 op, 584410700.00 ns, 570.7136 us/op
+WorkloadActual   6: 1024 op, 610639600.00 ns, 596.3277 us/op
+WorkloadActual   7: 1024 op, 615941400.00 ns, 601.5053 us/op
+WorkloadActual   8: 1024 op, 610826200.00 ns, 596.5100 us/op
+WorkloadActual   9: 1024 op, 600609700.00 ns, 586.5329 us/op
+WorkloadActual  10: 1024 op, 599375900.00 ns, 585.3280 us/op
+WorkloadActual  11: 1024 op, 603442400.00 ns, 589.2992 us/op
+WorkloadActual  12: 1024 op, 608078900.00 ns, 593.8271 us/op
+Successfully reverted power plan (GUID: 6fecc5ae-f350-48a5-b669-b472cb895ccf FriendlyName: Turbo)

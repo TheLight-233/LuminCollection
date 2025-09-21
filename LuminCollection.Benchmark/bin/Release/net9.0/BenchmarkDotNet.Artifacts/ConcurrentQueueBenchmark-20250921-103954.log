@@ -1,0 +1,168 @@
+// Validating benchmarks:
+// ***** BenchmarkRunner: Start   *****
+// ***** Found 4 benchmark(s) in total *****
+// ***** Building 1 exe(s) in Parallel: Start   *****
+// start dotnet  restore --nodeReuse:false /p:UseSharedCompilation=false /p:Deterministic=true /p:Optimize=true /p:ArtifactsPath="C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1/" /p:OutDir="C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\bin\Release\net9.0/" /p:OutputPath="C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\bin\Release\net9.0/" /p:PublishDir="C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\publish/" in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1
+// command took 3.47 sec and exited with 0
+// start dotnet  build -c Release --no-restore --nodeReuse:false /p:UseSharedCompilation=false /p:Deterministic=true /p:Optimize=true /p:ArtifactsPath="C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1/" /p:OutDir="C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\bin\Release\net9.0/" /p:OutputPath="C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\bin\Release\net9.0/" /p:PublishDir="C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\publish/" --output "C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\bin\Release\net9.0/" in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1
+// command took 6.52 sec and exited with 0
+// ***** Done, took 00:00:10 (10.24 sec)   *****
+// Found 4 benchmarks:
+//   ConcurrentQueueBenchmark.BclEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+//   ConcurrentQueueBenchmark.LuminUnsafeEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+//   ConcurrentQueueBenchmark.BclParallelEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+//   ConcurrentQueueBenchmark.LuminUnsafeParallelEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: 高性能)
+// **************************
+// Benchmark: ConcurrentQueueBenchmark.BclEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "LuminCollection.Benchmark-.NET 9.0-1.dll" --anonymousPipes 1244 1252 --benchmarkName ConcurrentQueueBenchmark.BclEnqueueDequeue --job ".NET 9.0" --benchmarkId 0 in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\bin\Release\net9.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.15.3
+// Runtime=.NET 9.0.3 (9.0.3, 9.0.325.11113), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL,AvxVnni,SERIALIZE VectorSize=256
+// Job: .NET 9.0
+
+OverheadJitting  1: 1 op, 96800.00 ns, 96.8000 us/op
+WorkloadJitting  1: 1 op, 15596700.00 ns, 15.5967 ms/op
+
+OverheadJitting  2: 16 op, 143400.00 ns, 8.9625 us/op
+WorkloadJitting  2: 16 op, 198439000.00 ns, 12.4024 ms/op
+
+WorkloadPilot    1: 16 op, 156883700.00 ns, 9.8052 ms/op
+WorkloadPilot    2: 32 op, 315656100.00 ns, 9.8643 ms/op
+WorkloadPilot    3: 64 op, 623869000.00 ns, 9.7480 ms/op
+
+OverheadWarmup   1: 64 op, 2000.00 ns, 31.2500 ns/op
+OverheadWarmup   2: 64 op, 700.00 ns, 10.9375 ns/op
+OverheadWarmup   3: 64 op, 500.00 ns, 7.8125 ns/op
+OverheadWarmup   4: 64 op, 500.00 ns, 7.8125 ns/op
+OverheadWarmup   5: 64 op, 500.00 ns, 7.8125 ns/op
+OverheadWarmup   6: 64 op, 500.00 ns, 7.8125 ns/op
+OverheadWarmup   7: 64 op, 500.00 ns, 7.8125 ns/op
+
+OverheadActual   1: 64 op, 600.00 ns, 9.3750 ns/op
+OverheadActual   2: 64 op, 500.00 ns, 7.8125 ns/op
+OverheadActual   3: 64 op, 500.00 ns, 7.8125 ns/op
+OverheadActual   4: 64 op, 500.00 ns, 7.8125 ns/op
+OverheadActual   5: 64 op, 500.00 ns, 7.8125 ns/op
+OverheadActual   6: 64 op, 600.00 ns, 9.3750 ns/op
+OverheadActual   7: 64 op, 500.00 ns, 7.8125 ns/op
+OverheadActual   8: 64 op, 600.00 ns, 9.3750 ns/op
+OverheadActual   9: 64 op, 500.00 ns, 7.8125 ns/op
+OverheadActual  10: 64 op, 500.00 ns, 7.8125 ns/op
+OverheadActual  11: 64 op, 500.00 ns, 7.8125 ns/op
+OverheadActual  12: 64 op, 500.00 ns, 7.8125 ns/op
+OverheadActual  13: 64 op, 500.00 ns, 7.8125 ns/op
+OverheadActual  14: 64 op, 400.00 ns, 6.2500 ns/op
+OverheadActual  15: 64 op, 500.00 ns, 7.8125 ns/op
+OverheadActual  16: 64 op, 500.00 ns, 7.8125 ns/op
+OverheadActual  17: 64 op, 600.00 ns, 9.3750 ns/op
+OverheadActual  18: 64 op, 500.00 ns, 7.8125 ns/op
+OverheadActual  19: 64 op, 500.00 ns, 7.8125 ns/op
+OverheadActual  20: 64 op, 700.00 ns, 10.9375 ns/op
+
+WorkloadWarmup   1: 64 op, 639782100.00 ns, 9.9966 ms/op
+WorkloadWarmup   2: 64 op, 631182300.00 ns, 9.8622 ms/op
+WorkloadWarmup   3: 64 op, 634914200.00 ns, 9.9205 ms/op
+WorkloadWarmup   4: 64 op, 629718600.00 ns, 9.8394 ms/op
+WorkloadWarmup   5: 64 op, 631632400.00 ns, 9.8693 ms/op
+WorkloadWarmup   6: 64 op, 628363900.00 ns, 9.8182 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 64 op, 630221400.00 ns, 9.8472 ms/op
+WorkloadActual   2: 64 op, 629638100.00 ns, 9.8381 ms/op
+WorkloadActual   3: 64 op, 629525500.00 ns, 9.8363 ms/op
+WorkloadActual   4: 64 op, 626121400.00 ns, 9.7831 ms/op
+WorkloadActual   5: 64 op, 627994600.00 ns, 9.8124 ms/op
+WorkloadActual   6: 64 op, 630312700.00 ns, 9.8486 ms/op
+WorkloadActual   7: 64 op, 626514500.00 ns, 9.7893 ms/op
+WorkloadActual   8: 64 op, 626818700.00 ns, 9.7940 ms/op
+WorkloadActual   9: 64 op, 622418000.00 ns, 9.7253 ms/op
+WorkloadActual  10: 64 op, 624876600.00 ns, 9.7637 ms/op
+WorkloadActual  11: 64 op, 627268600.00 ns, 9.8011 ms/op
+WorkloadActual  12: 64 op, 631825500.00 ns, 9.8723 ms/op
+WorkloadActual  13: 64 op, 629511900.00 ns, 9.8361 ms/op
+WorkloadActual  14: 64 op, 629014200.00 ns, 9.8283 ms/op
+WorkloadActual  15: 64 op, 625195300.00 ns, 9.7687 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 64 op, 630220900.00 ns, 9.8472 ms/op
+WorkloadResult   2: 64 op, 629637600.00 ns, 9.8381 ms/op
+WorkloadResult   3: 64 op, 629525000.00 ns, 9.8363 ms/op
+WorkloadResult   4: 64 op, 626120900.00 ns, 9.7831 ms/op
+WorkloadResult   5: 64 op, 627994100.00 ns, 9.8124 ms/op
+WorkloadResult   6: 64 op, 630312200.00 ns, 9.8486 ms/op
+WorkloadResult   7: 64 op, 626514000.00 ns, 9.7893 ms/op
+WorkloadResult   8: 64 op, 626818200.00 ns, 9.7940 ms/op
+WorkloadResult   9: 64 op, 622417500.00 ns, 9.7253 ms/op
+WorkloadResult  10: 64 op, 624876100.00 ns, 9.7637 ms/op
+WorkloadResult  11: 64 op, 627268100.00 ns, 9.8011 ms/op
+WorkloadResult  12: 64 op, 631825000.00 ns, 9.8723 ms/op
+WorkloadResult  13: 64 op, 629511400.00 ns, 9.8361 ms/op
+WorkloadResult  14: 64 op, 629013700.00 ns, 9.8283 ms/op
+WorkloadResult  15: 64 op, 625194800.00 ns, 9.7687 ms/op
+// GC:  0 0 0 0 64
+// Threading:  0 0 64
+
+// AfterAll
+// Benchmark Process 25992 has exited with code 0.
+
+Mean = 9.810 ms, StdErr = 0.010 ms (0.10%), N = 15, StdDev = 0.039 ms
+Min = 9.725 ms, Q1 = 9.786 ms, Median = 9.812 ms, Q3 = 9.837 ms, Max = 9.872 ms
+IQR = 0.051 ms, LowerFence = 9.710 ms, UpperFence = 9.914 ms
+ConfidenceInterval = [9.767 ms; 9.852 ms] (CI 99.9%), Margin = 0.042 ms (0.43% of Mean)
+Skewness = -0.4, Kurtosis = 2.21, MValue = 2
+
+// ** Remained 3 (75.0 %) benchmark(s) to run. Estimated finish 2025-09-21 10:41 (0h 0m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: 高性能)
+// **************************
+// Benchmark: ConcurrentQueueBenchmark.LuminUnsafeEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "LuminCollection.Benchmark-.NET 9.0-1.dll" --anonymousPipes 1288 1300 --benchmarkName ConcurrentQueueBenchmark.LuminUnsafeEnqueueDequeue --job ".NET 9.0" --benchmarkId 1 in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\bin\Release\net9.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.15.3
+// Runtime=.NET 9.0.3 (9.0.3, 9.0.325.11113), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL,AvxVnni,SERIALIZE VectorSize=256
+// Job: .NET 9.0
+
+OverheadJitting  1: 1 op, 83600.00 ns, 83.6000 us/op
+
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation.
+ ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at LuminCollection.UnsafeCollection.LuminConcurrentQueue`1.Enqueue(T item) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection\Unsafe\LuminConcurrentQueue.cs:line 121
+   at ConcurrentQueueBenchmark.LuminUnsafeEnqueueDequeue() in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\ConcurrentBenchmark.cs:line 44
+   at BenchmarkDotNet.Autogenerated.Runnable_1.WorkloadActionNoUnroll(Int64 invokeCount) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\LuminCollection.Benchmark-.NET 9.0-1.notcs:line 503
+   at BenchmarkDotNet.Engines.Engine.Measure(Action`1 action, Int64 invokeCount)
+   at BenchmarkDotNet.Engines.Engine.RunIteration(IterationData data)
+   at BenchmarkDotNet.Engines.EngineFactory.Jit(Engine engine, Int32 jitIndex, Int32 invokeCount, Int32 unrollFactor)
+   at BenchmarkDotNet.Engines.EngineFactory.CreateReadyToRun(EngineParameters engineParameters)
+   at BenchmarkDotNet.Autogenerated.Runnable_1.Run(IHost host, String benchmarkName) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\LuminCollection.Benchmark-.NET 9.0-1.notcs:line 368
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+   --- End of inner exception stack trace ---
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+   at System.Reflection.MethodBaseInvoker.InvokeWithFewArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   at BenchmarkDotNet.Autogenerated.UniqueProgramName.AfterAssemblyLoadingAttached(String[] args) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\LuminCollection.Benchmark-.NET 9.0-1.notcs:line 57
+// AfterAll
+No Workload Results were obtained from the run.
+// Benchmark Process 5416 has exited with code -1.
+
+// ** Remained 2 (50.0 %) benchmark(s) to run. Estimated finish 2025-09-21 10:40 (0h 0m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: 高性能)
+// **************************
+// Benchmark: ConcurrentQueueBenchmark.BclParallelEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "LuminCollection.Benchmark-.NET 9.0-1.dll" --anonymousPipes 1160 1128 --benchmarkName ConcurrentQueueBenchmark.BclParallelEnqueueDequeue --job ".NET 9.0" --benchmarkId 2 in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminC

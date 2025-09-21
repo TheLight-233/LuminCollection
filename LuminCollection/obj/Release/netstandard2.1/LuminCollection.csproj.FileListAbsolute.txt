@@ -1,0 +1,10 @@
+C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection\bin\Release\netstandard2.1\LuminCollection.deps.json
+C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection\bin\Release\netstandard2.1\LuminCollection.dll
+C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection\bin\Release\netstandard2.1\LuminCollection.pdb
+C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection\obj\Release\netstandard2.1\LuminCollection.csproj.AssemblyReference.cache
+C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection\obj\Release\netstandard2.1\LuminCollection.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection\obj\Release\netstandard2.1\LuminCollection.AssemblyInfoInputs.cache
+C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection\obj\Release\netstandard2.1\LuminCollection.AssemblyInfo.cs
+C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection\obj\Release\netstandard2.1\LuminCollection.csproj.CoreCompileInputs.cache
+C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection\obj\Release\netstandard2.1\LuminCollection.dll
+C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection\obj\Release\netstandard2.1\LuminCollection.pdb

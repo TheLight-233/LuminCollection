@@ -1,0 +1,317 @@
+// Validating benchmarks:
+// ***** BenchmarkRunner: Start   *****
+// ***** Found 10 benchmark(s) in total *****
+// ***** Building 1 exe(s) in Parallel: Start   *****
+// start dotnet  restore --nodeReuse:false /p:UseSharedCompilation=false /p:Deterministic=true /p:Optimize=true /p:ArtifactsPath="C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1/" /p:OutDir="C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\bin\Release\net9.0/" /p:OutputPath="C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\bin\Release\net9.0/" /p:PublishDir="C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\publish/" in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1
+// command took 2.44 sec and exited with 0
+// start dotnet  build -c Release --no-restore --nodeReuse:false /p:UseSharedCompilation=false /p:Deterministic=true /p:Optimize=true /p:ArtifactsPath="C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1/" /p:OutDir="C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\bin\Release\net9.0/" /p:OutputPath="C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\bin\Release\net9.0/" /p:PublishDir="C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\publish/" --output "C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\bin\Release\net9.0/" in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1
+// command took 6.78 sec and exited with 0
+// ***** Done, took 00:00:09 (9.28 sec)   *****
+// Found 10 benchmarks:
+//   ConcurrentQueueBenchmark.BclEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+//   ConcurrentQueueBenchmark.LuminEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+//   ConcurrentQueueBenchmark.LuminUnsafeEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+//   ConcurrentQueueBenchmark.NativeEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+//   ConcurrentQueueBenchmark.UnsafeEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+//   ConcurrentQueueBenchmark.BclParallelEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+//   ConcurrentQueueBenchmark.LuminParallelEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+//   ConcurrentQueueBenchmark.LuminUnsafeParallelEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+//   ConcurrentQueueBenchmark.NativeParallelEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+//   ConcurrentQueueBenchmark.UnsafeParallelEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: 高性能)
+// **************************
+// Benchmark: ConcurrentQueueBenchmark.BclEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "LuminCollection.Benchmark-.NET 9.0-1.dll" --anonymousPipes 1208 1196 --benchmarkName ConcurrentQueueBenchmark.BclEnqueueDequeue --job ".NET 9.0" --benchmarkId 0 in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\bin\Release\net9.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.15.3
+// Runtime=.NET 9.0.3 (9.0.3, 9.0.325.11113), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL,AvxVnni,SERIALIZE VectorSize=256
+// Job: .NET 9.0
+
+No Workload Results were obtained from the run.
+// Benchmark Process 46796 has exited with code -1073741819.
+
+// ** Remained 9 (90.0 %) benchmark(s) to run. Estimated finish 2025-09-20 22:42 (0h 0m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: 高性能)
+// **************************
+// Benchmark: ConcurrentQueueBenchmark.LuminEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "LuminCollection.Benchmark-.NET 9.0-1.dll" --anonymousPipes 1132 1284 --benchmarkName ConcurrentQueueBenchmark.LuminEnqueueDequeue --job ".NET 9.0" --benchmarkId 1 in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\bin\Release\net9.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.15.3
+// Runtime=.NET 9.0.3 (9.0.3, 9.0.325.11113), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL,AvxVnni,SERIALIZE VectorSize=256
+// Job: .NET 9.0
+
+No Workload Results were obtained from the run.
+// Benchmark Process 16200 has exited with code -1073741819.
+
+// ** Remained 8 (80.0 %) benchmark(s) to run. Estimated finish 2025-09-20 22:42 (0h 0m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: 高性能)
+// **************************
+// Benchmark: ConcurrentQueueBenchmark.LuminUnsafeEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "LuminCollection.Benchmark-.NET 9.0-1.dll" --anonymousPipes 1208 1304 --benchmarkName ConcurrentQueueBenchmark.LuminUnsafeEnqueueDequeue --job ".NET 9.0" --benchmarkId 2 in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\bin\Release\net9.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.15.3
+// Runtime=.NET 9.0.3 (9.0.3, 9.0.325.11113), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL,AvxVnni,SERIALIZE VectorSize=256
+// Job: .NET 9.0
+
+No Workload Results were obtained from the run.
+// Benchmark Process 45200 has exited with code -1073741819.
+
+// ** Remained 7 (70.0 %) benchmark(s) to run. Estimated finish 2025-09-20 22:42 (0h 0m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: 高性能)
+// **************************
+// Benchmark: ConcurrentQueueBenchmark.NativeEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "LuminCollection.Benchmark-.NET 9.0-1.dll" --anonymousPipes 1324 1132 --benchmarkName ConcurrentQueueBenchmark.NativeEnqueueDequeue --job ".NET 9.0" --benchmarkId 3 in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\bin\Release\net9.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.15.3
+// Runtime=.NET 9.0.3 (9.0.3, 9.0.325.11113), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL,AvxVnni,SERIALIZE VectorSize=256
+// Job: .NET 9.0
+
+No Workload Results were obtained from the run.
+// Benchmark Process 33616 has exited with code -1073741819.
+
+// ** Remained 6 (60.0 %) benchmark(s) to run. Estimated finish 2025-09-20 22:42 (0h 0m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: 高性能)
+// **************************
+// Benchmark: ConcurrentQueueBenchmark.UnsafeEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "LuminCollection.Benchmark-.NET 9.0-1.dll" --anonymousPipes 1372 1208 --benchmarkName ConcurrentQueueBenchmark.UnsafeEnqueueDequeue --job ".NET 9.0" --benchmarkId 4 in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\bin\Release\net9.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.15.3
+// Runtime=.NET 9.0.3 (9.0.3, 9.0.325.11113), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL,AvxVnni,SERIALIZE VectorSize=256
+// Job: .NET 9.0
+
+No Workload Results were obtained from the run.
+// Benchmark Process 20092 has exited with code -1073741819.
+
+// ** Remained 5 (50.0 %) benchmark(s) to run. Estimated finish 2025-09-20 22:42 (0h 0m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: 高性能)
+// **************************
+// Benchmark: ConcurrentQueueBenchmark.BclParallelEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "LuminCollection.Benchmark-.NET 9.0-1.dll" --anonymousPipes 1208 1400 --benchmarkName ConcurrentQueueBenchmark.BclParallelEnqueueDequeue --job ".NET 9.0" --benchmarkId 5 in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\bin\Release\net9.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.15.3
+// Runtime=.NET 9.0.3 (9.0.3, 9.0.325.11113), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL,AvxVnni,SERIALIZE VectorSize=256
+// Job: .NET 9.0
+
+No Workload Results were obtained from the run.
+// Benchmark Process 42012 has exited with code -1073741819.
+
+// ** Remained 4 (40.0 %) benchmark(s) to run. Estimated finish 2025-09-20 22:42 (0h 0m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: 高性能)
+// **************************
+// Benchmark: ConcurrentQueueBenchmark.LuminParallelEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "LuminCollection.Benchmark-.NET 9.0-1.dll" --anonymousPipes 1384 1416 --benchmarkName ConcurrentQueueBenchmark.LuminParallelEnqueueDequeue --job ".NET 9.0" --benchmarkId 6 in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\bin\Release\net9.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.15.3
+// Runtime=.NET 9.0.3 (9.0.3, 9.0.325.11113), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL,AvxVnni,SERIALIZE VectorSize=256
+// Job: .NET 9.0
+
+No Workload Results were obtained from the run.
+// Benchmark Process 22336 has exited with code -1073741819.
+
+// ** Remained 3 (30.0 %) benchmark(s) to run. Estimated finish 2025-09-20 22:42 (0h 0m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: 高性能)
+// **************************
+// Benchmark: ConcurrentQueueBenchmark.LuminUnsafeParallelEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "LuminCollection.Benchmark-.NET 9.0-1.dll" --anonymousPipes 1360 1376 --benchmarkName ConcurrentQueueBenchmark.LuminUnsafeParallelEnqueueDequeue --job ".NET 9.0" --benchmarkId 7 in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\bin\Release\net9.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.15.3
+// Runtime=.NET 9.0.3 (9.0.3, 9.0.325.11113), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL,AvxVnni,SERIALIZE VectorSize=256
+// Job: .NET 9.0
+
+No Workload Results were obtained from the run.
+// Benchmark Process 52104 has exited with code -1073741819.
+
+// ** Remained 2 (20.0 %) benchmark(s) to run. Estimated finish 2025-09-20 22:42 (0h 0m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: 高性能)
+// **************************
+// Benchmark: ConcurrentQueueBenchmark.NativeParallelEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "LuminCollection.Benchmark-.NET 9.0-1.dll" --anonymousPipes 1360 1376 --benchmarkName ConcurrentQueueBenchmark.NativeParallelEnqueueDequeue --job ".NET 9.0" --benchmarkId 8 in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\bin\Release\net9.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.15.3
+// Runtime=.NET 9.0.3 (9.0.3, 9.0.325.11113), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL,AvxVnni,SERIALIZE VectorSize=256
+// Job: .NET 9.0
+
+No Workload Results were obtained from the run.
+// Benchmark Process 28060 has exited with code -1073741819.
+
+// ** Remained 1 (10.0 %) benchmark(s) to run. Estimated finish 2025-09-20 22:41 (0h 0m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: 高性能)
+// **************************
+// Benchmark: ConcurrentQueueBenchmark.UnsafeParallelEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "LuminCollection.Benchmark-.NET 9.0-1.dll" --anonymousPipes 1304 1412 --benchmarkName ConcurrentQueueBenchmark.UnsafeParallelEnqueueDequeue --job ".NET 9.0" --benchmarkId 9 in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\bin\Release\net9.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.15.3
+// Runtime=.NET 9.0.3 (9.0.3, 9.0.325.11113), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL,AvxVnni,SERIALIZE VectorSize=256
+// Job: .NET 9.0
+
+No Workload Results were obtained from the run.
+// Benchmark Process 46692 has exited with code -1073741819.
+
+// ** Remained 0 (0.0 %) benchmark(s) to run. Estimated finish 2025-09-20 22:41 (0h 0m from now) **
+Successfully reverted power plan (GUID: 6fecc5ae-f350-48a5-b669-b472cb895ccf FriendlyName: Turbo)
+// ***** BenchmarkRunner: Finish  *****
+
+// * Export *
+  BenchmarkDotNet.Artifacts\results\ConcurrentQueueBenchmark-report.csv
+  BenchmarkDotNet.Artifacts\results\ConcurrentQueueBenchmark-report-github.md
+  BenchmarkDotNet.Artifacts\results\ConcurrentQueueBenchmark-report.html
+
+// * Detailed results *
+ConcurrentQueueBenchmark.BclEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+Runtime = .NET 9.0.3 (9.0.3, 9.0.325.11113), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+There are not any results runs
+
+ConcurrentQueueBenchmark.LuminEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+Runtime = .NET 9.0.3 (9.0.3, 9.0.325.11113), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+There are not any results runs
+
+ConcurrentQueueBenchmark.LuminUnsafeEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+Runtime = .NET 9.0.3 (9.0.3, 9.0.325.11113), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+There are not any results runs
+
+ConcurrentQueueBenchmark.NativeEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+Runtime = .NET 9.0.3 (9.0.3, 9.0.325.11113), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+There are not any results runs
+
+ConcurrentQueueBenchmark.UnsafeEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+Runtime = .NET 9.0.3 (9.0.3, 9.0.325.11113), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+There are not any results runs
+
+ConcurrentQueueBenchmark.BclParallelEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+Runtime = .NET 9.0.3 (9.0.3, 9.0.325.11113), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+There are not any results runs
+
+ConcurrentQueueBenchmark.LuminParallelEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+Runtime = .NET 9.0.3 (9.0.3, 9.0.325.11113), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+There are not any results runs
+
+ConcurrentQueueBenchmark.LuminUnsafeParallelEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+Runtime = .NET 9.0.3 (9.0.3, 9.0.325.11113), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+There are not any results runs
+
+ConcurrentQueueBenchmark.NativeParallelEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+Runtime = .NET 9.0.3 (9.0.3, 9.0.325.11113), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+There are not any results runs
+
+ConcurrentQueueBenchmark.UnsafeParallelEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+Runtime = .NET 9.0.3 (9.0.3, 9.0.325.11113), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+There are not any results runs
+
+// * Summary *
+
+BenchmarkDotNet v0.15.3, Windows 11 (10.0.26100.6584/24H2/2024Update/HudsonValley)
+13th Gen Intel Core i7-13650HX 2.60GHz, 1 CPU, 20 logical and 14 physical cores
+  [Host]   : .NET 9.0.3, X64 NativeAOT x86-64-v3
+  .NET 9.0 : .NET 9.0.3 (9.0.3, 9.0.325.11113), X64 RyuJIT x86-64-v3
+
+Job=.NET 9.0  Runtime=.NET 9.0  
+
+| Method                            | Mean | Error | Ratio | RatioSD | Alloc Ratio |
+|---------------------------------- |-----:|------:|------:|--------:|------------:|
+| BclEnqueueDequeue                 |   NA |    NA |     ? |       ? |           ? |
+| LuminEnqueueDequeue               |   NA |    NA |     ? |       ? |           ? |
+| LuminUnsafeEnqueueDequeue         |   NA |    NA |     ? |       ? |           ? |
+| NativeEnqueueDequeue              |   NA |    NA |     ? |       ? |           ? |
+| UnsafeEnqueueDequeue              |   NA |    NA |     ? |       ? |           ? |
+| BclParallelEnqueueDequeue         |   NA |    NA |     ? |       ? |           ? |
+| LuminParallelEnqueueDequeue       |   NA |    NA |     ? |       ? |           ? |
+| LuminUnsafeParallelEnqueueDequeue |   NA |    NA |     ? |       ? |           ? |
+| NativeParallelEnqueueDequeue      |   NA |    NA |     ? |       ? |           ? |
+| UnsafeParallelEnqueueDequeue      |   NA |    NA |     ? |       ? |           ? |
+
+Benchmarks with issues:
+  ConcurrentQueueBenchmark.BclEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+  ConcurrentQueueBenchmark.LuminEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+  ConcurrentQueueBenchmark.LuminUnsafeEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+  ConcurrentQueueBenchmark.NativeEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+  ConcurrentQueueBenchmark.UnsafeEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+  ConcurrentQueueBenchmark.BclParallelEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+  ConcurrentQueueBenchmark.LuminParallelEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+  ConcurrentQueueBenchmark.LuminUnsafeParallelEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+  ConcurrentQueueBenchmark.NativeParallelEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+  ConcurrentQueueBenchmark.UnsafeParallelEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+
+// * Warnings *
+BaselineCustomAnalyzer
+  Summary -> A question mark '?' symbol indicates that it was not possible to compute the (Ratio, RatioSD, Alloc Ratio) column(s) because the baseline or benchmark could not be found, or the baseline value is too close to zero.
+
+// * Legends *
+  Mean        : Arithmetic mean of all measurements
+  Error       : Half of 99.9% confidence interval
+  Ratio       : Mean of the ratio distribution ([Current]/[Baseline])
+  RatioSD     : Standard deviation of the ratio distribution ([Current]/[Baseline])
+  Alloc Ratio : Allocated memory ratio distribution ([Current]/[Baseline])
+  1 ns        : 1 Nanosecond (0.000000001 sec)
+
+// * Diagnostic Output - MemoryDiagnoser *
+
+// * Diagnostic Output - ThreadingDiagnoser *
+
+
+// ***** BenchmarkRunner: End *****
+Run time: 00:00:28 (28.97 sec), executed benchmarks: 10
+
+Global total time: 00:00:38 (38.86 sec), executed benchmarks: 10
+// * Artifacts cleanup *
+Artifacts cleanup is finished

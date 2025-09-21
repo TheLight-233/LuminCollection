@@ -1,0 +1,1342 @@
+// Validating benchmarks:
+// ***** BenchmarkRunner: Start   *****
+// ***** Found 10 benchmark(s) in total *****
+// ***** Building 1 exe(s) in Parallel: Start   *****
+// start dotnet  restore --nodeReuse:false /p:UseSharedCompilation=false /p:Deterministic=true /p:Optimize=true /p:ArtifactsPath="C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1/" /p:OutDir="C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\bin\Release\net9.0/" /p:OutputPath="C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\bin\Release\net9.0/" /p:PublishDir="C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\publish/" in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1
+// command took 0.98 sec and exited with 0
+// start dotnet  build -c Release --no-restore --nodeReuse:false /p:UseSharedCompilation=false /p:Deterministic=true /p:Optimize=true /p:ArtifactsPath="C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1/" /p:OutDir="C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\bin\Release\net9.0/" /p:OutputPath="C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\bin\Release\net9.0/" /p:PublishDir="C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\publish/" --output "C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\bin\Release\net9.0/" in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1
+// command took 6.65 sec and exited with 0
+// ***** Done, took 00:00:07 (7.69 sec)   *****
+// Found 10 benchmarks:
+//   ConcurrentQueueBenchmark.BclEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+//   ConcurrentQueueBenchmark.LuminEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+//   ConcurrentQueueBenchmark.LuminUnsafeEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+//   ConcurrentQueueBenchmark.NativeEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+//   ConcurrentQueueBenchmark.UnsafeEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+//   ConcurrentQueueBenchmark.BclParallelEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+//   ConcurrentQueueBenchmark.LuminParallelEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+//   ConcurrentQueueBenchmark.LuminUnsafeParallelEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+//   ConcurrentQueueBenchmark.NativeParallelEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+//   ConcurrentQueueBenchmark.UnsafeParallelEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: 高性能)
+// **************************
+// Benchmark: ConcurrentQueueBenchmark.BclEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "LuminCollection.Benchmark-.NET 9.0-1.dll" --anonymousPipes 1076 1132 --benchmarkName ConcurrentQueueBenchmark.BclEnqueueDequeue --job ".NET 9.0" --benchmarkId 0 in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\bin\Release\net9.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.15.3
+// Runtime=.NET 9.0.3 (9.0.3, 9.0.325.11113), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL,AvxVnni,SERIALIZE VectorSize=256
+// Job: .NET 9.0
+
+OverheadJitting  1: 1 op, 89900.00 ns, 89.9000 us/op
+WorkloadJitting  1: 1 op, 15466500.00 ns, 15.4665 ms/op
+
+OverheadJitting  2: 16 op, 157100.00 ns, 9.8188 us/op
+WorkloadJitting  2: 16 op, 218708300.00 ns, 13.6693 ms/op
+
+WorkloadPilot    1: 16 op, 161379000.00 ns, 10.0862 ms/op
+WorkloadPilot    2: 32 op, 323640700.00 ns, 10.1138 ms/op
+WorkloadPilot    3: 64 op, 641530000.00 ns, 10.0239 ms/op
+
+OverheadWarmup   1: 64 op, 1900.00 ns, 29.6875 ns/op
+OverheadWarmup   2: 64 op, 500.00 ns, 7.8125 ns/op
+OverheadWarmup   3: 64 op, 500.00 ns, 7.8125 ns/op
+OverheadWarmup   4: 64 op, 600.00 ns, 9.3750 ns/op
+OverheadWarmup   5: 64 op, 600.00 ns, 9.3750 ns/op
+OverheadWarmup   6: 64 op, 500.00 ns, 7.8125 ns/op
+
+OverheadActual   1: 64 op, 600.00 ns, 9.3750 ns/op
+OverheadActual   2: 64 op, 700.00 ns, 10.9375 ns/op
+OverheadActual   3: 64 op, 600.00 ns, 9.3750 ns/op
+OverheadActual   4: 64 op, 500.00 ns, 7.8125 ns/op
+OverheadActual   5: 64 op, 600.00 ns, 9.3750 ns/op
+OverheadActual   6: 64 op, 600.00 ns, 9.3750 ns/op
+OverheadActual   7: 64 op, 600.00 ns, 9.3750 ns/op
+OverheadActual   8: 64 op, 500.00 ns, 7.8125 ns/op
+OverheadActual   9: 64 op, 600.00 ns, 9.3750 ns/op
+OverheadActual  10: 64 op, 500.00 ns, 7.8125 ns/op
+OverheadActual  11: 64 op, 500.00 ns, 7.8125 ns/op
+OverheadActual  12: 64 op, 500.00 ns, 7.8125 ns/op
+OverheadActual  13: 64 op, 600.00 ns, 9.3750 ns/op
+OverheadActual  14: 64 op, 600.00 ns, 9.3750 ns/op
+OverheadActual  15: 64 op, 500.00 ns, 7.8125 ns/op
+OverheadActual  16: 64 op, 500.00 ns, 7.8125 ns/op
+OverheadActual  17: 64 op, 500.00 ns, 7.8125 ns/op
+OverheadActual  18: 64 op, 600.00 ns, 9.3750 ns/op
+OverheadActual  19: 64 op, 600.00 ns, 9.3750 ns/op
+OverheadActual  20: 64 op, 600.00 ns, 9.3750 ns/op
+
+WorkloadWarmup   1: 64 op, 648162500.00 ns, 10.1275 ms/op
+WorkloadWarmup   2: 64 op, 637743500.00 ns, 9.9647 ms/op
+WorkloadWarmup   3: 64 op, 638605000.00 ns, 9.9782 ms/op
+WorkloadWarmup   4: 64 op, 639735700.00 ns, 9.9959 ms/op
+WorkloadWarmup   5: 64 op, 639062100.00 ns, 9.9853 ms/op
+WorkloadWarmup   6: 64 op, 640753000.00 ns, 10.0118 ms/op
+WorkloadWarmup   7: 64 op, 638646500.00 ns, 9.9789 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 64 op, 644937500.00 ns, 10.0771 ms/op
+WorkloadActual   2: 64 op, 649177600.00 ns, 10.1434 ms/op
+WorkloadActual   3: 64 op, 642178200.00 ns, 10.0340 ms/op
+WorkloadActual   4: 64 op, 639017300.00 ns, 9.9846 ms/op
+WorkloadActual   5: 64 op, 649061900.00 ns, 10.1416 ms/op
+WorkloadActual   6: 64 op, 652430300.00 ns, 10.1942 ms/op
+WorkloadActual   7: 64 op, 637919600.00 ns, 9.9675 ms/op
+WorkloadActual   8: 64 op, 642953700.00 ns, 10.0462 ms/op
+WorkloadActual   9: 64 op, 639826900.00 ns, 9.9973 ms/op
+WorkloadActual  10: 64 op, 641993800.00 ns, 10.0312 ms/op
+WorkloadActual  11: 64 op, 641425500.00 ns, 10.0223 ms/op
+WorkloadActual  12: 64 op, 642283700.00 ns, 10.0357 ms/op
+WorkloadActual  13: 64 op, 642047500.00 ns, 10.0320 ms/op
+WorkloadActual  14: 64 op, 640470400.00 ns, 10.0074 ms/op
+WorkloadActual  15: 64 op, 640120600.00 ns, 10.0019 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 64 op, 644936900.00 ns, 10.0771 ms/op
+WorkloadResult   2: 64 op, 649177000.00 ns, 10.1434 ms/op
+WorkloadResult   3: 64 op, 642177600.00 ns, 10.0340 ms/op
+WorkloadResult   4: 64 op, 639016700.00 ns, 9.9846 ms/op
+WorkloadResult   5: 64 op, 649061300.00 ns, 10.1416 ms/op
+WorkloadResult   6: 64 op, 637919000.00 ns, 9.9675 ms/op
+WorkloadResult   7: 64 op, 642953100.00 ns, 10.0461 ms/op
+WorkloadResult   8: 64 op, 639826300.00 ns, 9.9973 ms/op
+WorkloadResult   9: 64 op, 641993200.00 ns, 10.0311 ms/op
+WorkloadResult  10: 64 op, 641424900.00 ns, 10.0223 ms/op
+WorkloadResult  11: 64 op, 642283100.00 ns, 10.0357 ms/op
+WorkloadResult  12: 64 op, 642046900.00 ns, 10.0320 ms/op
+WorkloadResult  13: 64 op, 640469800.00 ns, 10.0073 ms/op
+WorkloadResult  14: 64 op, 640120000.00 ns, 10.0019 ms/op
+// GC:  0 0 0 0 64
+// Threading:  0 0 64
+
+// AfterAll
+// Benchmark Process 47736 has exited with code 0.
+
+Mean = 10.037 ms, StdErr = 0.014 ms (0.14%), N = 14, StdDev = 0.052 ms
+Min = 9.967 ms, Q1 = 10.003 ms, Median = 10.032 ms, Q3 = 10.044 ms, Max = 10.143 ms
+IQR = 0.040 ms, LowerFence = 9.943 ms, UpperFence = 10.104 ms
+ConfidenceInterval = [9.978 ms; 10.096 ms] (CI 99.9%), Margin = 0.059 ms (0.59% of Mean)
+Skewness = 0.88, Kurtosis = 2.72, MValue = 2
+
+// ** Remained 9 (90.0 %) benchmark(s) to run. Estimated finish 2025-09-20 22:39 (0h 2m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: 高性能)
+// **************************
+// Benchmark: ConcurrentQueueBenchmark.LuminEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "LuminCollection.Benchmark-.NET 9.0-1.dll" --anonymousPipes 1220 1164 --benchmarkName ConcurrentQueueBenchmark.LuminEnqueueDequeue --job ".NET 9.0" --benchmarkId 1 in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\bin\Release\net9.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.15.3
+// Runtime=.NET 9.0.3 (9.0.3, 9.0.325.11113), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL,AvxVnni,SERIALIZE VectorSize=256
+// Job: .NET 9.0
+
+OverheadJitting  1: 1 op, 80300.00 ns, 80.3000 us/op
+WorkloadJitting  1: 1 op, 34983600.00 ns, 34.9836 ms/op
+
+WorkloadPilot    1: 2 op, 67221600.00 ns, 33.6108 ms/op
+WorkloadPilot    2: 3 op, 100712600.00 ns, 33.5709 ms/op
+WorkloadPilot    3: 4 op, 124296800.00 ns, 31.0742 ms/op
+WorkloadPilot    4: 5 op, 150018400.00 ns, 30.0037 ms/op
+WorkloadPilot    5: 6 op, 179496700.00 ns, 29.9161 ms/op
+WorkloadPilot    6: 7 op, 209357500.00 ns, 29.9082 ms/op
+WorkloadPilot    7: 8 op, 240264700.00 ns, 30.0331 ms/op
+WorkloadPilot    8: 9 op, 268536300.00 ns, 29.8374 ms/op
+WorkloadPilot    9: 10 op, 298003500.00 ns, 29.8004 ms/op
+WorkloadPilot   10: 11 op, 330579500.00 ns, 30.0527 ms/op
+WorkloadPilot   11: 12 op, 358897700.00 ns, 29.9081 ms/op
+WorkloadPilot   12: 13 op, 390139600.00 ns, 30.0107 ms/op
+WorkloadPilot   13: 14 op, 420431300.00 ns, 30.0308 ms/op
+WorkloadPilot   14: 15 op, 445454300.00 ns, 29.6970 ms/op
+WorkloadPilot   15: 16 op, 477486200.00 ns, 29.8429 ms/op
+WorkloadPilot   16: 32 op, 956867000.00 ns, 29.9021 ms/op
+
+WorkloadWarmup   1: 32 op, 955673400.00 ns, 29.8648 ms/op
+WorkloadWarmup   2: 32 op, 953999100.00 ns, 29.8125 ms/op
+WorkloadWarmup   3: 32 op, 953290900.00 ns, 29.7903 ms/op
+WorkloadWarmup   4: 32 op, 956135300.00 ns, 29.8792 ms/op
+WorkloadWarmup   5: 32 op, 955316800.00 ns, 29.8537 ms/op
+WorkloadWarmup   6: 32 op, 953272700.00 ns, 29.7898 ms/op
+WorkloadWarmup   7: 32 op, 954367900.00 ns, 29.8240 ms/op
+WorkloadWarmup   8: 32 op, 955449800.00 ns, 29.8578 ms/op
+WorkloadWarmup   9: 32 op, 953357600.00 ns, 29.7924 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 32 op, 958009800.00 ns, 29.9378 ms/op
+WorkloadActual   2: 32 op, 952623700.00 ns, 29.7695 ms/op
+WorkloadActual   3: 32 op, 951199500.00 ns, 29.7250 ms/op
+WorkloadActual   4: 32 op, 954554800.00 ns, 29.8298 ms/op
+WorkloadActual   5: 32 op, 953325500.00 ns, 29.7914 ms/op
+WorkloadActual   6: 32 op, 959053100.00 ns, 29.9704 ms/op
+WorkloadActual   7: 32 op, 955738700.00 ns, 29.8668 ms/op
+WorkloadActual   8: 32 op, 955244200.00 ns, 29.8514 ms/op
+WorkloadActual   9: 32 op, 954171900.00 ns, 29.8179 ms/op
+WorkloadActual  10: 32 op, 953339000.00 ns, 29.7918 ms/op
+WorkloadActual  11: 32 op, 955709300.00 ns, 29.8659 ms/op
+WorkloadActual  12: 32 op, 956665800.00 ns, 29.8958 ms/op
+WorkloadActual  13: 32 op, 954717500.00 ns, 29.8349 ms/op
+WorkloadActual  14: 32 op, 955932000.00 ns, 29.8729 ms/op
+WorkloadActual  15: 32 op, 956607100.00 ns, 29.8940 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 32 op, 958009800.00 ns, 29.9378 ms/op
+WorkloadResult   2: 32 op, 952623700.00 ns, 29.7695 ms/op
+WorkloadResult   3: 32 op, 951199500.00 ns, 29.7250 ms/op
+WorkloadResult   4: 32 op, 954554800.00 ns, 29.8298 ms/op
+WorkloadResult   5: 32 op, 953325500.00 ns, 29.7914 ms/op
+WorkloadResult   6: 32 op, 959053100.00 ns, 29.9704 ms/op
+WorkloadResult   7: 32 op, 955738700.00 ns, 29.8668 ms/op
+WorkloadResult   8: 32 op, 955244200.00 ns, 29.8514 ms/op
+WorkloadResult   9: 32 op, 954171900.00 ns, 29.8179 ms/op
+WorkloadResult  10: 32 op, 953339000.00 ns, 29.7918 ms/op
+WorkloadResult  11: 32 op, 955709300.00 ns, 29.8659 ms/op
+WorkloadResult  12: 32 op, 956665800.00 ns, 29.8958 ms/op
+WorkloadResult  13: 32 op, 954717500.00 ns, 29.8349 ms/op
+WorkloadResult  14: 32 op, 955932000.00 ns, 29.8729 ms/op
+WorkloadResult  15: 32 op, 956607100.00 ns, 29.8940 ms/op
+// GC:  0 0 0 0 32
+// Threading:  0 0 32
+
+// AfterAll
+// Benchmark Process 38484 has exited with code 0.
+
+Mean = 29.848 ms, StdErr = 0.017 ms (0.06%), N = 15, StdDev = 0.064 ms
+Min = 29.725 ms, Q1 = 29.805 ms, Median = 29.851 ms, Q3 = 29.883 ms, Max = 29.970 ms
+IQR = 0.079 ms, LowerFence = 29.687 ms, UpperFence = 30.001 ms
+ConfidenceInterval = [29.779 ms; 29.916 ms] (CI 99.9%), Margin = 0.069 ms (0.23% of Mean)
+Skewness = 0.03, Kurtosis = 2.3, MValue = 2
+
+// ** Remained 8 (80.0 %) benchmark(s) to run. Estimated finish 2025-09-20 22:40 (0h 3m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: 高性能)
+// **************************
+// Benchmark: ConcurrentQueueBenchmark.LuminUnsafeEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "LuminCollection.Benchmark-.NET 9.0-1.dll" --anonymousPipes 1248 1236 --benchmarkName ConcurrentQueueBenchmark.LuminUnsafeEnqueueDequeue --job ".NET 9.0" --benchmarkId 2 in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\bin\Release\net9.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.15.3
+// Runtime=.NET 9.0.3 (9.0.3, 9.0.325.11113), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL,AvxVnni,SERIALIZE VectorSize=256
+// Job: .NET 9.0
+
+OverheadJitting  1: 1 op, 88000.00 ns, 88.0000 us/op
+WorkloadJitting  1: 1 op, 197481000.00 ns, 197.4810 ms/op
+
+WorkloadPilot    1: 2 op, 379186400.00 ns, 189.5932 ms/op
+WorkloadPilot    2: 3 op, 567279400.00 ns, 189.0931 ms/op
+
+WorkloadWarmup   1: 3 op, 566548100.00 ns, 188.8494 ms/op
+WorkloadWarmup   2: 3 op, 566039500.00 ns, 188.6798 ms/op
+WorkloadWarmup   3: 3 op, 568234500.00 ns, 189.4115 ms/op
+WorkloadWarmup   4: 3 op, 566792800.00 ns, 188.9309 ms/op
+WorkloadWarmup   5: 3 op, 565409700.00 ns, 188.4699 ms/op
+WorkloadWarmup   6: 3 op, 566612500.00 ns, 188.8708 ms/op
+WorkloadWarmup   7: 3 op, 566117600.00 ns, 188.7059 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 3 op, 564852000.00 ns, 188.2840 ms/op
+WorkloadActual   2: 3 op, 565395500.00 ns, 188.4652 ms/op
+WorkloadActual   3: 3 op, 565115300.00 ns, 188.3718 ms/op
+WorkloadActual   4: 3 op, 566290900.00 ns, 188.7636 ms/op
+WorkloadActual   5: 3 op, 566119800.00 ns, 188.7066 ms/op
+WorkloadActual   6: 3 op, 565734600.00 ns, 188.5782 ms/op
+WorkloadActual   7: 3 op, 565947200.00 ns, 188.6491 ms/op
+WorkloadActual   8: 3 op, 564430500.00 ns, 188.1435 ms/op
+WorkloadActual   9: 3 op, 566077900.00 ns, 188.6926 ms/op
+WorkloadActual  10: 3 op, 564466700.00 ns, 188.1556 ms/op
+WorkloadActual  11: 3 op, 567105300.00 ns, 189.0351 ms/op
+WorkloadActual  12: 3 op, 573887900.00 ns, 191.2960 ms/op
+WorkloadActual  13: 3 op, 567684400.00 ns, 189.2281 ms/op
+WorkloadActual  14: 3 op, 567886000.00 ns, 189.2953 ms/op
+WorkloadActual  15: 3 op, 565019200.00 ns, 188.3397 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 3 op, 564852000.00 ns, 188.2840 ms/op
+WorkloadResult   2: 3 op, 565395500.00 ns, 188.4652 ms/op
+WorkloadResult   3: 3 op, 565115300.00 ns, 188.3718 ms/op
+WorkloadResult   4: 3 op, 566290900.00 ns, 188.7636 ms/op
+WorkloadResult   5: 3 op, 566119800.00 ns, 188.7066 ms/op
+WorkloadResult   6: 3 op, 565734600.00 ns, 188.5782 ms/op
+WorkloadResult   7: 3 op, 565947200.00 ns, 188.6491 ms/op
+WorkloadResult   8: 3 op, 564430500.00 ns, 188.1435 ms/op
+WorkloadResult   9: 3 op, 566077900.00 ns, 188.6926 ms/op
+WorkloadResult  10: 3 op, 564466700.00 ns, 188.1556 ms/op
+WorkloadResult  11: 3 op, 567105300.00 ns, 189.0351 ms/op
+WorkloadResult  12: 3 op, 567684400.00 ns, 189.2281 ms/op
+WorkloadResult  13: 3 op, 567886000.00 ns, 189.2953 ms/op
+WorkloadResult  14: 3 op, 565019200.00 ns, 188.3397 ms/op
+// GC:  0 0 0 0 3
+// Threading:  0 0 3
+
+// AfterAll
+// Benchmark Process 18748 has exited with code 0.
+
+Mean = 188.622 ms, StdErr = 0.098 ms (0.05%), N = 14, StdDev = 0.367 ms
+Min = 188.143 ms, Q1 = 188.348 ms, Median = 188.614 ms, Q3 = 188.749 ms, Max = 189.295 ms
+IQR = 0.402 ms, LowerFence = 187.745 ms, UpperFence = 189.352 ms
+ConfidenceInterval = [188.208 ms; 189.036 ms] (CI 99.9%), Margin = 0.414 ms (0.22% of Mean)
+Skewness = 0.45, Kurtosis = 1.94, MValue = 2
+
+// ** Remained 7 (70.0 %) benchmark(s) to run. Estimated finish 2025-09-20 22:39 (0h 2m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: 高性能)
+// **************************
+// Benchmark: ConcurrentQueueBenchmark.NativeEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "LuminCollection.Benchmark-.NET 9.0-1.dll" --anonymousPipes 1288 1284 --benchmarkName ConcurrentQueueBenchmark.NativeEnqueueDequeue --job ".NET 9.0" --benchmarkId 3 in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\bin\Release\net9.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.15.3
+// Runtime=.NET 9.0.3 (9.0.3, 9.0.325.11113), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL,AvxVnni,SERIALIZE VectorSize=256
+// Job: .NET 9.0
+
+OverheadJitting  1: 1 op, 85800.00 ns, 85.8000 us/op
+
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation.
+ ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at ConcurrentQueueBenchmark.NativeEnqueueDequeue() in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\ConcurrentBenchmark.cs:line 64
+   at BenchmarkDotNet.Autogenerated.Runnable_3.WorkloadActionNoUnroll(Int64 invokeCount) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\LuminCollection.Benchmark-.NET 9.0-1.notcs:line 887
+   at BenchmarkDotNet.Engines.Engine.Measure(Action`1 action, Int64 invokeCount)
+   at BenchmarkDotNet.Engines.Engine.RunIteration(IterationData data)
+   at BenchmarkDotNet.Engines.EngineFactory.Jit(Engine engine, Int32 jitIndex, Int32 invokeCount, Int32 unrollFactor)
+   at BenchmarkDotNet.Engines.EngineFactory.CreateReadyToRun(EngineParameters engineParameters)
+   at BenchmarkDotNet.Autogenerated.Runnable_3.Run(IHost host, String benchmarkName) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\LuminCollection.Benchmark-.NET 9.0-1.notcs:line 752
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+   --- End of inner exception stack trace ---
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+   at System.Reflection.MethodBaseInvoker.InvokeWithFewArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   at BenchmarkDotNet.Autogenerated.UniqueProgramName.AfterAssemblyLoadingAttached(String[] args) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\LuminCollection.Benchmark-.NET 9.0-1.notcs:line 57
+// AfterAll
+No Workload Results were obtained from the run.
+// Benchmark Process 21584 has exited with code -1.
+
+// ** Remained 6 (60.0 %) benchmark(s) to run. Estimated finish 2025-09-20 22:38 (0h 1m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: 高性能)
+// **************************
+// Benchmark: ConcurrentQueueBenchmark.UnsafeEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "LuminCollection.Benchmark-.NET 9.0-1.dll" --anonymousPipes 1268 1240 --benchmarkName ConcurrentQueueBenchmark.UnsafeEnqueueDequeue --job ".NET 9.0" --benchmarkId 4 in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\bin\Release\net9.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.15.3
+// Runtime=.NET 9.0.3 (9.0.3, 9.0.325.11113), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL,AvxVnni,SERIALIZE VectorSize=256
+// Job: .NET 9.0
+
+OverheadJitting  1: 1 op, 81300.00 ns, 81.3000 us/op
+
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation.
+ ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at ConcurrentQueueBenchmark.UnsafeEnqueueDequeue() in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\ConcurrentBenchmark.cs:line 74
+   at BenchmarkDotNet.Autogenerated.Runnable_4.WorkloadActionNoUnroll(Int64 invokeCount) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\LuminCollection.Benchmark-.NET 9.0-1.notcs:line 1079
+   at BenchmarkDotNet.Engines.Engine.Measure(Action`1 action, Int64 invokeCount)
+   at BenchmarkDotNet.Engines.Engine.RunIteration(IterationData data)
+   at BenchmarkDotNet.Engines.EngineFactory.Jit(Engine engine, Int32 jitIndex, Int32 invokeCount, Int32 unrollFactor)
+   at BenchmarkDotNet.Engines.EngineFactory.CreateReadyToRun(EngineParameters engineParameters)
+   at BenchmarkDotNet.Autogenerated.Runnable_4.Run(IHost host, String benchmarkName) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\LuminCollection.Benchmark-.NET 9.0-1.notcs:line 944
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+   --- End of inner exception stack trace ---
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+   at System.Reflection.MethodBaseInvoker.InvokeWithFewArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   at BenchmarkDotNet.Autogenerated.UniqueProgramName.AfterAssemblyLoadingAttached(String[] args) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\LuminCollection.Benchmark-.NET 9.0-1.notcs:line 57
+// AfterAll
+No Workload Results were obtained from the run.
+// Benchmark Process 29532 has exited with code -1.
+
+// ** Remained 5 (50.0 %) benchmark(s) to run. Estimated finish 2025-09-20 22:38 (0h 1m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: 高性能)
+// **************************
+// Benchmark: ConcurrentQueueBenchmark.BclParallelEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "LuminCollection.Benchmark-.NET 9.0-1.dll" --anonymousPipes 1288 1112 --benchmarkName ConcurrentQueueBenchmark.BclParallelEnqueueDequeue --job ".NET 9.0" --benchmarkId 5 in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\bin\Release\net9.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.15.3
+// Runtime=.NET 9.0.3 (9.0.3, 9.0.325.11113), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL,AvxVnni,SERIALIZE VectorSize=256
+// Job: .NET 9.0
+
+OverheadJitting  1: 1 op, 76300.00 ns, 76.3000 us/op
+WorkloadJitting  1: 1 op, 210925900.00 ns, 210.9259 ms/op
+
+WorkloadPilot    1: 2 op, 422207000.00 ns, 211.1035 ms/op
+WorkloadPilot    2: 3 op, 646853800.00 ns, 215.6179 ms/op
+
+WorkloadWarmup   1: 3 op, 671830500.00 ns, 223.9435 ms/op
+WorkloadWarmup   2: 3 op, 656769300.00 ns, 218.9231 ms/op
+WorkloadWarmup   3: 3 op, 641645000.00 ns, 213.8817 ms/op
+WorkloadWarmup   4: 3 op, 654348800.00 ns, 218.1163 ms/op
+WorkloadWarmup   5: 3 op, 650546300.00 ns, 216.8488 ms/op
+WorkloadWarmup   6: 3 op, 650150800.00 ns, 216.7169 ms/op
+WorkloadWarmup   7: 3 op, 649524600.00 ns, 216.5082 ms/op
+WorkloadWarmup   8: 3 op, 649889500.00 ns, 216.6298 ms/op
+WorkloadWarmup   9: 3 op, 652576900.00 ns, 217.5256 ms/op
+WorkloadWarmup  10: 3 op, 647142000.00 ns, 215.7140 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 3 op, 647515000.00 ns, 215.8383 ms/op
+WorkloadActual   2: 3 op, 646807400.00 ns, 215.6025 ms/op
+WorkloadActual   3: 3 op, 648418000.00 ns, 216.1393 ms/op
+WorkloadActual   4: 3 op, 648266200.00 ns, 216.0887 ms/op
+WorkloadActual   5: 3 op, 670009800.00 ns, 223.3366 ms/op
+WorkloadActual   6: 3 op, 669868000.00 ns, 223.2893 ms/op
+WorkloadActual   7: 3 op, 666740800.00 ns, 222.2469 ms/op
+WorkloadActual   8: 3 op, 668298000.00 ns, 222.7660 ms/op
+WorkloadActual   9: 3 op, 667912700.00 ns, 222.6376 ms/op
+WorkloadActual  10: 3 op, 668079600.00 ns, 222.6932 ms/op
+WorkloadActual  11: 3 op, 668532600.00 ns, 222.8442 ms/op
+WorkloadActual  12: 3 op, 671468400.00 ns, 223.8228 ms/op
+WorkloadActual  13: 3 op, 670229200.00 ns, 223.4097 ms/op
+WorkloadActual  14: 3 op, 672207700.00 ns, 224.0692 ms/op
+WorkloadActual  15: 3 op, 668417700.00 ns, 222.8059 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 3 op, 647515000.00 ns, 215.8383 ms/op
+WorkloadResult   2: 3 op, 646807400.00 ns, 215.6025 ms/op
+WorkloadResult   3: 3 op, 648418000.00 ns, 216.1393 ms/op
+WorkloadResult   4: 3 op, 648266200.00 ns, 216.0887 ms/op
+WorkloadResult   5: 3 op, 670009800.00 ns, 223.3366 ms/op
+WorkloadResult   6: 3 op, 669868000.00 ns, 223.2893 ms/op
+WorkloadResult   7: 3 op, 666740800.00 ns, 222.2469 ms/op
+WorkloadResult   8: 3 op, 668298000.00 ns, 222.7660 ms/op
+WorkloadResult   9: 3 op, 667912700.00 ns, 222.6376 ms/op
+WorkloadResult  10: 3 op, 668079600.00 ns, 222.6932 ms/op
+WorkloadResult  11: 3 op, 668532600.00 ns, 222.8442 ms/op
+WorkloadResult  12: 3 op, 671468400.00 ns, 223.8228 ms/op
+WorkloadResult  13: 3 op, 670229200.00 ns, 223.4097 ms/op
+WorkloadResult  14: 3 op, 672207700.00 ns, 224.0692 ms/op
+WorkloadResult  15: 3 op, 668417700.00 ns, 222.8059 ms/op
+// GC:  0 0 0 18424 3
+// Threading:  73 0 3
+
+// AfterAll
+// Benchmark Process 29860 has exited with code 0.
+
+Mean = 221.173 ms, StdErr = 0.856 ms (0.39%), N = 15, StdDev = 3.315 ms
+Min = 215.602 ms, Q1 = 219.193 ms, Median = 222.766 ms, Q3 = 223.313 ms, Max = 224.069 ms
+IQR = 4.120 ms, LowerFence = 213.013 ms, UpperFence = 229.493 ms
+ConfidenceInterval = [217.629 ms; 224.717 ms] (CI 99.9%), Margin = 3.544 ms (1.60% of Mean)
+Skewness = -0.89, Kurtosis = 1.82, MValue = 2
+
+// ** Remained 4 (40.0 %) benchmark(s) to run. Estimated finish 2025-09-20 22:38 (0h 0m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: 高性能)
+// **************************
+// Benchmark: ConcurrentQueueBenchmark.LuminParallelEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "LuminCollection.Benchmark-.NET 9.0-1.dll" --anonymousPipes 1304 1308 --benchmarkName ConcurrentQueueBenchmark.LuminParallelEnqueueDequeue --job ".NET 9.0" --benchmarkId 6 in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\bin\Release\net9.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.15.3
+// Runtime=.NET 9.0.3 (9.0.3, 9.0.325.11113), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL,AvxVnni,SERIALIZE VectorSize=256
+// Job: .NET 9.0
+
+OverheadJitting  1: 1 op, 80000.00 ns, 80.0000 us/op
+WorkloadJitting  1: 1 op, 125747600.00 ns, 125.7476 ms/op
+
+WorkloadPilot    1: 2 op, 182152300.00 ns, 91.0762 ms/op
+WorkloadPilot    2: 3 op, 248820600.00 ns, 82.9402 ms/op
+WorkloadPilot    3: 4 op, 338977300.00 ns, 84.7443 ms/op
+WorkloadPilot    4: 5 op, 507339700.00 ns, 101.4679 ms/op
+
+WorkloadWarmup   1: 5 op, 435656900.00 ns, 87.1314 ms/op
+WorkloadWarmup   2: 5 op, 447996000.00 ns, 89.5992 ms/op
+WorkloadWarmup   3: 5 op, 446422800.00 ns, 89.2846 ms/op
+WorkloadWarmup   4: 5 op, 371357800.00 ns, 74.2716 ms/op
+WorkloadWarmup   5: 5 op, 450710100.00 ns, 90.1420 ms/op
+WorkloadWarmup   6: 5 op, 400508400.00 ns, 80.1017 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 5 op, 426415400.00 ns, 85.2831 ms/op
+WorkloadActual   2: 5 op, 428343200.00 ns, 85.6686 ms/op
+WorkloadActual   3: 5 op, 493641000.00 ns, 98.7282 ms/op
+WorkloadActual   4: 5 op, 449582200.00 ns, 89.9164 ms/op
+WorkloadActual   5: 5 op, 432791900.00 ns, 86.5584 ms/op
+WorkloadActual   6: 5 op, 494221600.00 ns, 98.8443 ms/op
+WorkloadActual   7: 5 op, 418211200.00 ns, 83.6422 ms/op
+WorkloadActual   8: 5 op, 481325500.00 ns, 96.2651 ms/op
+WorkloadActual   9: 5 op, 460614100.00 ns, 92.1228 ms/op
+WorkloadActual  10: 5 op, 436013100.00 ns, 87.2026 ms/op
+WorkloadActual  11: 5 op, 401774600.00 ns, 80.3549 ms/op
+WorkloadActual  12: 5 op, 414926600.00 ns, 82.9853 ms/op
+WorkloadActual  13: 5 op, 433723500.00 ns, 86.7447 ms/op
+WorkloadActual  14: 5 op, 507647300.00 ns, 101.5295 ms/op
+WorkloadActual  15: 5 op, 523897000.00 ns, 104.7794 ms/op
+WorkloadActual  16: 5 op, 448758300.00 ns, 89.7517 ms/op
+WorkloadActual  17: 5 op, 491291000.00 ns, 98.2582 ms/op
+WorkloadActual  18: 5 op, 460634200.00 ns, 92.1268 ms/op
+WorkloadActual  19: 5 op, 468691100.00 ns, 93.7382 ms/op
+WorkloadActual  20: 5 op, 526291000.00 ns, 105.2582 ms/op
+WorkloadActual  21: 5 op, 515325700.00 ns, 103.0651 ms/op
+WorkloadActual  22: 5 op, 494364900.00 ns, 98.8730 ms/op
+WorkloadActual  23: 5 op, 416781700.00 ns, 83.3563 ms/op
+WorkloadActual  24: 5 op, 495637500.00 ns, 99.1275 ms/op
+WorkloadActual  25: 5 op, 487422100.00 ns, 97.4844 ms/op
+WorkloadActual  26: 5 op, 484913700.00 ns, 96.9827 ms/op
+WorkloadActual  27: 5 op, 447964900.00 ns, 89.5930 ms/op
+WorkloadActual  28: 5 op, 444714500.00 ns, 88.9429 ms/op
+WorkloadActual  29: 5 op, 417036200.00 ns, 83.4072 ms/op
+WorkloadActual  30: 5 op, 480775800.00 ns, 96.1552 ms/op
+WorkloadActual  31: 5 op, 462158200.00 ns, 92.4316 ms/op
+WorkloadActual  32: 5 op, 507330300.00 ns, 101.4661 ms/op
+WorkloadActual  33: 5 op, 463543100.00 ns, 92.7086 ms/op
+WorkloadActual  34: 5 op, 617961500.00 ns, 123.5923 ms/op
+WorkloadActual  35: 5 op, 558100500.00 ns, 111.6201 ms/op
+WorkloadActual  36: 5 op, 618731400.00 ns, 123.7463 ms/op
+WorkloadActual  37: 5 op, 561775600.00 ns, 112.3551 ms/op
+WorkloadActual  38: 5 op, 557085000.00 ns, 111.4170 ms/op
+WorkloadActual  39: 5 op, 640602500.00 ns, 128.1205 ms/op
+WorkloadActual  40: 5 op, 555146900.00 ns, 111.0294 ms/op
+WorkloadActual  41: 5 op, 660106700.00 ns, 132.0213 ms/op
+WorkloadActual  42: 5 op, 579469800.00 ns, 115.8940 ms/op
+WorkloadActual  43: 5 op, 650898700.00 ns, 130.1797 ms/op
+WorkloadActual  44: 5 op, 678652200.00 ns, 135.7304 ms/op
+WorkloadActual  45: 5 op, 606815800.00 ns, 121.3632 ms/op
+WorkloadActual  46: 5 op, 696113500.00 ns, 139.2227 ms/op
+WorkloadActual  47: 5 op, 617752100.00 ns, 123.5504 ms/op
+WorkloadActual  48: 5 op, 588508900.00 ns, 117.7018 ms/op
+WorkloadActual  49: 5 op, 573077600.00 ns, 114.6155 ms/op
+WorkloadActual  50: 5 op, 637128400.00 ns, 127.4257 ms/op
+WorkloadActual  51: 5 op, 715148800.00 ns, 143.0298 ms/op
+WorkloadActual  52: 5 op, 619132500.00 ns, 123.8265 ms/op
+WorkloadActual  53: 5 op, 695418700.00 ns, 139.0837 ms/op
+WorkloadActual  54: 5 op, 635652200.00 ns, 127.1304 ms/op
+WorkloadActual  55: 5 op, 682146600.00 ns, 136.4293 ms/op
+WorkloadActual  56: 5 op, 740725200.00 ns, 148.1450 ms/op
+WorkloadActual  57: 5 op, 644974300.00 ns, 128.9949 ms/op
+WorkloadActual  58: 5 op, 740038900.00 ns, 148.0078 ms/op
+WorkloadActual  59: 5 op, 635002800.00 ns, 127.0006 ms/op
+WorkloadActual  60: 5 op, 726469300.00 ns, 145.2939 ms/op
+WorkloadActual  61: 5 op, 655750800.00 ns, 131.1502 ms/op
+WorkloadActual  62: 5 op, 693183000.00 ns, 138.6366 ms/op
+WorkloadActual  63: 5 op, 745558800.00 ns, 149.1118 ms/op
+WorkloadActual  64: 5 op, 634514800.00 ns, 126.9030 ms/op
+WorkloadActual  65: 5 op, 708258100.00 ns, 141.6516 ms/op
+WorkloadActual  66: 5 op, 590027000.00 ns, 118.0054 ms/op
+WorkloadActual  67: 5 op, 683325400.00 ns, 136.6651 ms/op
+WorkloadActual  68: 5 op, 654194100.00 ns, 130.8388 ms/op
+WorkloadActual  69: 5 op, 710226700.00 ns, 142.0453 ms/op
+WorkloadActual  70: 5 op, 569361700.00 ns, 113.8723 ms/op
+WorkloadActual  71: 5 op, 652297900.00 ns, 130.4596 ms/op
+WorkloadActual  72: 5 op, 768110400.00 ns, 153.6221 ms/op
+WorkloadActual  73: 5 op, 743820500.00 ns, 148.7641 ms/op
+WorkloadActual  74: 5 op, 681639000.00 ns, 136.3278 ms/op
+WorkloadActual  75: 5 op, 601114600.00 ns, 120.2229 ms/op
+WorkloadActual  76: 5 op, 676450600.00 ns, 135.2901 ms/op
+WorkloadActual  77: 5 op, 714094800.00 ns, 142.8190 ms/op
+WorkloadActual  78: 5 op, 792686200.00 ns, 158.5372 ms/op
+WorkloadActual  79: 5 op, 788479600.00 ns, 157.6959 ms/op
+WorkloadActual  80: 5 op, 774073700.00 ns, 154.8147 ms/op
+WorkloadActual  81: 5 op, 741437200.00 ns, 148.2874 ms/op
+WorkloadActual  82: 5 op, 634000300.00 ns, 126.8001 ms/op
+WorkloadActual  83: 5 op, 668287500.00 ns, 133.6575 ms/op
+WorkloadActual  84: 5 op, 680947100.00 ns, 136.1894 ms/op
+WorkloadActual  85: 5 op, 690831800.00 ns, 138.1664 ms/op
+WorkloadActual  86: 5 op, 711656700.00 ns, 142.3313 ms/op
+WorkloadActual  87: 5 op, 714763000.00 ns, 142.9526 ms/op
+WorkloadActual  88: 5 op, 696485400.00 ns, 139.2971 ms/op
+WorkloadActual  89: 5 op, 727025200.00 ns, 145.4050 ms/op
+WorkloadActual  90: 5 op, 762025200.00 ns, 152.4050 ms/op
+WorkloadActual  91: 5 op, 697269600.00 ns, 139.4539 ms/op
+WorkloadActual  92: 5 op, 697656700.00 ns, 139.5313 ms/op
+WorkloadActual  93: 5 op, 742896900.00 ns, 148.5794 ms/op
+WorkloadActual  94: 5 op, 757816600.00 ns, 151.5633 ms/op
+WorkloadActual  95: 5 op, 730623500.00 ns, 146.1247 ms/op
+WorkloadActual  96: 5 op, 620707300.00 ns, 124.1415 ms/op
+WorkloadActual  97: 5 op, 648789500.00 ns, 129.7579 ms/op
+WorkloadActual  98: 5 op, 678387500.00 ns, 135.6775 ms/op
+WorkloadActual  99: 5 op, 648701100.00 ns, 129.7402 ms/op
+WorkloadActual  100: 5 op, 725591400.00 ns, 145.1183 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 5 op, 426415400.00 ns, 85.2831 ms/op
+WorkloadResult   2: 5 op, 428343200.00 ns, 85.6686 ms/op
+WorkloadResult   3: 5 op, 493641000.00 ns, 98.7282 ms/op
+WorkloadResult   4: 5 op, 449582200.00 ns, 89.9164 ms/op
+WorkloadResult   5: 5 op, 432791900.00 ns, 86.5584 ms/op
+WorkloadResult   6: 5 op, 494221600.00 ns, 98.8443 ms/op
+WorkloadResult   7: 5 op, 418211200.00 ns, 83.6422 ms/op
+WorkloadResult   8: 5 op, 481325500.00 ns, 96.2651 ms/op
+WorkloadResult   9: 5 op, 460614100.00 ns, 92.1228 ms/op
+WorkloadResult  10: 5 op, 436013100.00 ns, 87.2026 ms/op
+WorkloadResult  11: 5 op, 401774600.00 ns, 80.3549 ms/op
+WorkloadResult  12: 5 op, 414926600.00 ns, 82.9853 ms/op
+WorkloadResult  13: 5 op, 433723500.00 ns, 86.7447 ms/op
+WorkloadResult  14: 5 op, 507647300.00 ns, 101.5295 ms/op
+WorkloadResult  15: 5 op, 523897000.00 ns, 104.7794 ms/op
+WorkloadResult  16: 5 op, 448758300.00 ns, 89.7517 ms/op
+WorkloadResult  17: 5 op, 491291000.00 ns, 98.2582 ms/op
+WorkloadResult  18: 5 op, 460634200.00 ns, 92.1268 ms/op
+WorkloadResult  19: 5 op, 468691100.00 ns, 93.7382 ms/op
+WorkloadResult  20: 5 op, 526291000.00 ns, 105.2582 ms/op
+WorkloadResult  21: 5 op, 515325700.00 ns, 103.0651 ms/op
+WorkloadResult  22: 5 op, 494364900.00 ns, 98.8730 ms/op
+WorkloadResult  23: 5 op, 416781700.00 ns, 83.3563 ms/op
+WorkloadResult  24: 5 op, 495637500.00 ns, 99.1275 ms/op
+WorkloadResult  25: 5 op, 487422100.00 ns, 97.4844 ms/op
+WorkloadResult  26: 5 op, 484913700.00 ns, 96.9827 ms/op
+WorkloadResult  27: 5 op, 447964900.00 ns, 89.5930 ms/op
+WorkloadResult  28: 5 op, 444714500.00 ns, 88.9429 ms/op
+WorkloadResult  29: 5 op, 417036200.00 ns, 83.4072 ms/op
+WorkloadResult  30: 5 op, 480775800.00 ns, 96.1552 ms/op
+WorkloadResult  31: 5 op, 462158200.00 ns, 92.4316 ms/op
+WorkloadResult  32: 5 op, 507330300.00 ns, 101.4661 ms/op
+WorkloadResult  33: 5 op, 463543100.00 ns, 92.7086 ms/op
+WorkloadResult  34: 5 op, 617961500.00 ns, 123.5923 ms/op
+WorkloadResult  35: 5 op, 558100500.00 ns, 111.6201 ms/op
+WorkloadResult  36: 5 op, 618731400.00 ns, 123.7463 ms/op
+WorkloadResult  37: 5 op, 561775600.00 ns, 112.3551 ms/op
+WorkloadResult  38: 5 op, 557085000.00 ns, 111.4170 ms/op
+WorkloadResult  39: 5 op, 640602500.00 ns, 128.1205 ms/op
+WorkloadResult  40: 5 op, 555146900.00 ns, 111.0294 ms/op
+WorkloadResult  41: 5 op, 660106700.00 ns, 132.0213 ms/op
+WorkloadResult  42: 5 op, 579469800.00 ns, 115.8940 ms/op
+WorkloadResult  43: 5 op, 650898700.00 ns, 130.1797 ms/op
+WorkloadResult  44: 5 op, 678652200.00 ns, 135.7304 ms/op
+WorkloadResult  45: 5 op, 606815800.00 ns, 121.3632 ms/op
+WorkloadResult  46: 5 op, 696113500.00 ns, 139.2227 ms/op
+WorkloadResult  47: 5 op, 617752100.00 ns, 123.5504 ms/op
+WorkloadResult  48: 5 op, 588508900.00 ns, 117.7018 ms/op
+WorkloadResult  49: 5 op, 573077600.00 ns, 114.6155 ms/op
+WorkloadResult  50: 5 op, 637128400.00 ns, 127.4257 ms/op
+WorkloadResult  51: 5 op, 715148800.00 ns, 143.0298 ms/op
+WorkloadResult  52: 5 op, 619132500.00 ns, 123.8265 ms/op
+WorkloadResult  53: 5 op, 695418700.00 ns, 139.0837 ms/op
+WorkloadResult  54: 5 op, 635652200.00 ns, 127.1304 ms/op
+WorkloadResult  55: 5 op, 682146600.00 ns, 136.4293 ms/op
+WorkloadResult  56: 5 op, 740725200.00 ns, 148.1450 ms/op
+WorkloadResult  57: 5 op, 644974300.00 ns, 128.9949 ms/op
+WorkloadResult  58: 5 op, 740038900.00 ns, 148.0078 ms/op
+WorkloadResult  59: 5 op, 635002800.00 ns, 127.0006 ms/op
+WorkloadResult  60: 5 op, 726469300.00 ns, 145.2939 ms/op
+WorkloadResult  61: 5 op, 655750800.00 ns, 131.1502 ms/op
+WorkloadResult  62: 5 op, 693183000.00 ns, 138.6366 ms/op
+WorkloadResult  63: 5 op, 745558800.00 ns, 149.1118 ms/op
+WorkloadResult  64: 5 op, 634514800.00 ns, 126.9030 ms/op
+WorkloadResult  65: 5 op, 708258100.00 ns, 141.6516 ms/op
+WorkloadResult  66: 5 op, 590027000.00 ns, 118.0054 ms/op
+WorkloadResult  67: 5 op, 683325400.00 ns, 136.6651 ms/op
+WorkloadResult  68: 5 op, 654194100.00 ns, 130.8388 ms/op
+WorkloadResult  69: 5 op, 710226700.00 ns, 142.0453 ms/op
+WorkloadResult  70: 5 op, 569361700.00 ns, 113.8723 ms/op
+WorkloadResult  71: 5 op, 652297900.00 ns, 130.4596 ms/op
+WorkloadResult  72: 5 op, 768110400.00 ns, 153.6221 ms/op
+WorkloadResult  73: 5 op, 743820500.00 ns, 148.7641 ms/op
+WorkloadResult  74: 5 op, 681639000.00 ns, 136.3278 ms/op
+WorkloadResult  75: 5 op, 601114600.00 ns, 120.2229 ms/op
+WorkloadResult  76: 5 op, 676450600.00 ns, 135.2901 ms/op
+WorkloadResult  77: 5 op, 714094800.00 ns, 142.8190 ms/op
+WorkloadResult  78: 5 op, 792686200.00 ns, 158.5372 ms/op
+WorkloadResult  79: 5 op, 788479600.00 ns, 157.6959 ms/op
+WorkloadResult  80: 5 op, 774073700.00 ns, 154.8147 ms/op
+WorkloadResult  81: 5 op, 741437200.00 ns, 148.2874 ms/op
+WorkloadResult  82: 5 op, 634000300.00 ns, 126.8001 ms/op
+WorkloadResult  83: 5 op, 668287500.00 ns, 133.6575 ms/op
+WorkloadResult  84: 5 op, 680947100.00 ns, 136.1894 ms/op
+WorkloadResult  85: 5 op, 690831800.00 ns, 138.1664 ms/op
+WorkloadResult  86: 5 op, 711656700.00 ns, 142.3313 ms/op
+WorkloadResult  87: 5 op, 714763000.00 ns, 142.9526 ms/op
+WorkloadResult  88: 5 op, 696485400.00 ns, 139.2971 ms/op
+WorkloadResult  89: 5 op, 727025200.00 ns, 145.4050 ms/op
+WorkloadResult  90: 5 op, 762025200.00 ns, 152.4050 ms/op
+WorkloadResult  91: 5 op, 697269600.00 ns, 139.4539 ms/op
+WorkloadResult  92: 5 op, 697656700.00 ns, 139.5313 ms/op
+WorkloadResult  93: 5 op, 742896900.00 ns, 148.5794 ms/op
+WorkloadResult  94: 5 op, 757816600.00 ns, 151.5633 ms/op
+WorkloadResult  95: 5 op, 730623500.00 ns, 146.1247 ms/op
+WorkloadResult  96: 5 op, 620707300.00 ns, 124.1415 ms/op
+WorkloadResult  97: 5 op, 648789500.00 ns, 129.7579 ms/op
+WorkloadResult  98: 5 op, 678387500.00 ns, 135.6775 ms/op
+WorkloadResult  99: 5 op, 648701100.00 ns, 129.7402 ms/op
+WorkloadResult  100: 5 op, 725591400.00 ns, 145.1183 ms/op
+// GC:  0 0 0 86856 5
+// Threading:  425 1 5
+
+// AfterAll
+// Benchmark Process 39780 has exited with code 0.
+
+Mean = 120.725 ms, StdErr = 2.244 ms (1.86%), N = 100, StdDev = 22.437 ms
+Min = 80.355 ms, Q1 = 98.815 ms, Median = 126.852 ms, Q3 = 139.241 ms, Max = 158.537 ms
+IQR = 40.426 ms, LowerFence = 38.176 ms, UpperFence = 199.880 ms
+ConfidenceInterval = [113.115 ms; 128.335 ms] (CI 99.9%), Margin = 7.610 ms (6.30% of Mean)
+Skewness = -0.25, Kurtosis = 1.72, MValue = 3
+
+// ** Remained 3 (30.0 %) benchmark(s) to run. Estimated finish 2025-09-20 22:39 (0h 1m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: 高性能)
+// **************************
+// Benchmark: ConcurrentQueueBenchmark.LuminUnsafeParallelEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "LuminCollection.Benchmark-.NET 9.0-1.dll" --anonymousPipes 1180 1348 --benchmarkName ConcurrentQueueBenchmark.LuminUnsafeParallelEnqueueDequeue --job ".NET 9.0" --benchmarkId 7 in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\bin\Release\net9.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.15.3
+// Runtime=.NET 9.0.3 (9.0.3, 9.0.325.11113), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL,AvxVnni,SERIALIZE VectorSize=256
+// Job: .NET 9.0
+
+OverheadJitting  1: 1 op, 98800.00 ns, 98.8000 us/op
+WorkloadJitting  1: 1 op, 196136900.00 ns, 196.1369 ms/op
+
+WorkloadPilot    1: 2 op, 433159600.00 ns, 216.5798 ms/op
+WorkloadPilot    2: 3 op, 598693600.00 ns, 199.5645 ms/op
+
+WorkloadWarmup   1: 3 op, 604696000.00 ns, 201.5653 ms/op
+WorkloadWarmup   2: 3 op, 653854100.00 ns, 217.9514 ms/op
+WorkloadWarmup   3: 3 op, 495521000.00 ns, 165.1737 ms/op
+WorkloadWarmup   4: 3 op, 603748600.00 ns, 201.2495 ms/op
+WorkloadWarmup   5: 3 op, 668998800.00 ns, 222.9996 ms/op
+WorkloadWarmup   6: 3 op, 730543500.00 ns, 243.5145 ms/op
+WorkloadWarmup   7: 3 op, 741726200.00 ns, 247.2421 ms/op
+WorkloadWarmup   8: 3 op, 762280300.00 ns, 254.0934 ms/op
+WorkloadWarmup   9: 3 op, 692077800.00 ns, 230.6926 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 3 op, 740681800.00 ns, 246.8939 ms/op
+WorkloadActual   2: 3 op, 759502100.00 ns, 253.1674 ms/op
+WorkloadActual   3: 3 op, 737612900.00 ns, 245.8710 ms/op
+WorkloadActual   4: 3 op, 771434200.00 ns, 257.1447 ms/op
+WorkloadActual   5: 3 op, 737837000.00 ns, 245.9457 ms/op
+WorkloadActual   6: 3 op, 738756900.00 ns, 246.2523 ms/op
+WorkloadActual   7: 3 op, 714240500.00 ns, 238.0802 ms/op
+WorkloadActual   8: 3 op, 778549600.00 ns, 259.5165 ms/op
+WorkloadActual   9: 3 op, 724858300.00 ns, 241.6194 ms/op
+WorkloadActual  10: 3 op, 755885200.00 ns, 251.9617 ms/op
+WorkloadActual  11: 3 op, 757575800.00 ns, 252.5253 ms/op
+WorkloadActual  12: 3 op, 714937400.00 ns, 238.3125 ms/op
+WorkloadActual  13: 3 op, 714847900.00 ns, 238.2826 ms/op
+WorkloadActual  14: 3 op, 745301700.00 ns, 248.4339 ms/op
+WorkloadActual  15: 3 op, 772161900.00 ns, 257.3873 ms/op
+WorkloadActual  16: 3 op, 742026200.00 ns, 247.3421 ms/op
+WorkloadActual  17: 3 op, 758568600.00 ns, 252.8562 ms/op
+WorkloadActual  18: 3 op, 760857500.00 ns, 253.6192 ms/op
+WorkloadActual  19: 3 op, 773753400.00 ns, 257.9178 ms/op
+WorkloadActual  20: 3 op, 757376900.00 ns, 252.4590 ms/op
+WorkloadActual  21: 3 op, 729448700.00 ns, 243.1496 ms/op
+WorkloadActual  22: 3 op, 789842200.00 ns, 263.2807 ms/op
+WorkloadActual  23: 3 op, 758006500.00 ns, 252.6688 ms/op
+WorkloadActual  24: 3 op, 759295900.00 ns, 253.0986 ms/op
+WorkloadActual  25: 3 op, 759296300.00 ns, 253.0988 ms/op
+WorkloadActual  26: 3 op, 794837500.00 ns, 264.9458 ms/op
+WorkloadActual  27: 3 op, 768302900.00 ns, 256.1010 ms/op
+WorkloadActual  28: 3 op, 747310700.00 ns, 249.1036 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 3 op, 740681800.00 ns, 246.8939 ms/op
+WorkloadResult   2: 3 op, 759502100.00 ns, 253.1674 ms/op
+WorkloadResult   3: 3 op, 737612900.00 ns, 245.8710 ms/op
+WorkloadResult   4: 3 op, 771434200.00 ns, 257.1447 ms/op
+WorkloadResult   5: 3 op, 737837000.00 ns, 245.9457 ms/op
+WorkloadResult   6: 3 op, 738756900.00 ns, 246.2523 ms/op
+WorkloadResult   7: 3 op, 714240500.00 ns, 238.0802 ms/op
+WorkloadResult   8: 3 op, 778549600.00 ns, 259.5165 ms/op
+WorkloadResult   9: 3 op, 724858300.00 ns, 241.6194 ms/op
+WorkloadResult  10: 3 op, 755885200.00 ns, 251.9617 ms/op
+WorkloadResult  11: 3 op, 757575800.00 ns, 252.5253 ms/op
+WorkloadResult  12: 3 op, 714937400.00 ns, 238.3125 ms/op
+WorkloadResult  13: 3 op, 714847900.00 ns, 238.2826 ms/op
+WorkloadResult  14: 3 op, 745301700.00 ns, 248.4339 ms/op
+WorkloadResult  15: 3 op, 772161900.00 ns, 257.3873 ms/op
+WorkloadResult  16: 3 op, 742026200.00 ns, 247.3421 ms/op
+WorkloadResult  17: 3 op, 758568600.00 ns, 252.8562 ms/op
+WorkloadResult  18: 3 op, 760857500.00 ns, 253.6192 ms/op
+WorkloadResult  19: 3 op, 773753400.00 ns, 257.9178 ms/op
+WorkloadResult  20: 3 op, 757376900.00 ns, 252.4590 ms/op
+WorkloadResult  21: 3 op, 729448700.00 ns, 243.1496 ms/op
+WorkloadResult  22: 3 op, 789842200.00 ns, 263.2807 ms/op
+WorkloadResult  23: 3 op, 758006500.00 ns, 252.6688 ms/op
+WorkloadResult  24: 3 op, 759295900.00 ns, 253.0986 ms/op
+WorkloadResult  25: 3 op, 759296300.00 ns, 253.0988 ms/op
+WorkloadResult  26: 3 op, 794837500.00 ns, 264.9458 ms/op
+WorkloadResult  27: 3 op, 768302900.00 ns, 256.1010 ms/op
+WorkloadResult  28: 3 op, 747310700.00 ns, 249.1036 ms/op
+// GC:  0 0 0 20248 3
+// Threading:  86 1 3
+
+// AfterAll
+// Benchmark Process 31044 has exited with code 0.
+
+Mean = 250.751 ms, StdErr = 1.339 ms (0.53%), N = 28, StdDev = 7.083 ms
+Min = 238.080 ms, Q1 = 246.176 ms, Median = 252.492 ms, Q3 = 254.240 ms, Max = 264.946 ms
+IQR = 8.064 ms, LowerFence = 234.080 ms, UpperFence = 266.336 ms
+ConfidenceInterval = [245.812 ms; 255.690 ms] (CI 99.9%), Margin = 4.939 ms (1.97% of Mean)
+Skewness = -0.09, Kurtosis = 2.33, MValue = 2
+
+// ** Remained 2 (20.0 %) benchmark(s) to run. Estimated finish 2025-09-20 22:39 (0h 0m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: 高性能)
+// **************************
+// Benchmark: ConcurrentQueueBenchmark.NativeParallelEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "LuminCollection.Benchmark-.NET 9.0-1.dll" --anonymousPipes 1320 1296 --benchmarkName ConcurrentQueueBenchmark.NativeParallelEnqueueDequeue --job ".NET 9.0" --benchmarkId 8 in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\bin\Release\net9.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.15.3
+// Runtime=.NET 9.0.3 (9.0.3, 9.0.325.11113), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL,AvxVnni,SERIALIZE VectorSize=256
+// Job: .NET 9.0
+
+OverheadJitting  1: 1 op, 79900.00 ns, 79.9000 us/op
+
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation.
+ ---> System.AggregateException: One or more errors occurred. (Object reference not set to an instance of an object.) (Object reference not set to an instance of an object.) (Object reference not set to an instance of an object.) (Object reference not set to an instance of an object.) (Object reference not set to an instance of an object.) (Object reference not set to an instance of an object.) (Object reference not set to an instance of an object.) (Object reference not set to an instance of an object.) (Object reference not set to an instance of an object.) (Object reference not set to an instance of an object.) (Object reference not set to an instance of an object.) (Object reference not set to an instance of an object.) (Object reference not set to an instance of an object.) (Object reference not set to an instance of an object.) (Object reference not set to an instance of an object.) (Object reference not set to an instance of an object.) (Object reference not set to an instance of an object.) (Object reference not set to an instance of an object.) (Object reference not set to an instance of an object.) (Object reference not set to an instance of an object.) (Object reference not set to an instance of an object.)
+ ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at ConcurrentQueueBenchmark.<NativeParallelEnqueueDequeue>b__15_0(Int32 i) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\ConcurrentBenchmark.cs:line 115
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.TaskReplicator.Run[TState](ReplicatableUserAction`1 action, ParallelOptions options, Boolean stopOnFirstFailure)
+   at System.Threading.Tasks.Parallel.ForWorker[TLocal,TInt](TInt fromInclusive, TInt toExclusive, ParallelOptions parallelOptions, Action`1 body, Action`2 bodyWithState, Func`4 bodyWithLocal, Func`1 localInit, Action`1 localFinally)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.ForWorker[TLocal,TInt](TInt fromInclusive, TInt toExclusive, ParallelOptions parallelOptions, Action`1 body, Action`2 bodyWithState, Func`4 bodyWithLocal, Func`1 localInit, Action`1 localFinally)
+   at System.Threading.Tasks.Parallel.For(Int32 fromInclusive, Int32 toExclusive, Action`1 body)
+   at ConcurrentQueueBenchmark.NativeParallelEnqueueDequeue() in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\ConcurrentBenchmark.cs:line 113
+   at BenchmarkDotNet.Autogenerated.Runnable_8.WorkloadActionNoUnroll(Int64 invokeCount) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\LuminCollection.Benchmark-.NET 9.0-1.notcs:line 1847
+   at BenchmarkDotNet.Engines.Engine.Measure(Action`1 action, Int64 invokeCount)
+   at BenchmarkDotNet.Engines.Engine.RunIteration(IterationData data)
+   at BenchmarkDotNet.Engines.EngineFactory.Jit(Engine engine, Int32 jitIndex, Int32 invokeCount, Int32 unrollFactor)
+   at BenchmarkDotNet.Engines.EngineFactory.CreateReadyToRun(EngineParameters engineParameters)
+   at BenchmarkDotNet.Autogenerated.Runnable_8.Run(IHost host, String benchmarkName) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\LuminCollection.Benchmark-.NET 9.0-1.notcs:line 1712
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+ ---> (Inner Exception #1) System.NullReferenceException: Object reference not set to an instance of an object.
+   at ConcurrentQueueBenchmark.<NativeParallelEnqueueDequeue>b__15_0(Int32 i) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\ConcurrentBenchmark.cs:line 115
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()<---
+
+ ---> (Inner Exception #2) System.NullReferenceException: Object reference not set to an instance of an object.
+   at ConcurrentQueueBenchmark.<NativeParallelEnqueueDequeue>b__15_0(Int32 i) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\ConcurrentBenchmark.cs:line 115
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()<---
+
+ ---> (Inner Exception #3) System.NullReferenceException: Object reference not set to an instance of an object.
+   at ConcurrentQueueBenchmark.<NativeParallelEnqueueDequeue>b__15_0(Int32 i) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\ConcurrentBenchmark.cs:line 115
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()<---
+
+ ---> (Inner Exception #4) System.NullReferenceException: Object reference not set to an instance of an object.
+   at ConcurrentQueueBenchmark.<NativeParallelEnqueueDequeue>b__15_0(Int32 i) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\ConcurrentBenchmark.cs:line 115
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()<---
+
+ ---> (Inner Exception #5) System.NullReferenceException: Object reference not set to an instance of an object.
+   at ConcurrentQueueBenchmark.<NativeParallelEnqueueDequeue>b__15_0(Int32 i) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\ConcurrentBenchmark.cs:line 115
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()<---
+
+ ---> (Inner Exception #6) System.NullReferenceException: Object reference not set to an instance of an object.
+   at ConcurrentQueueBenchmark.<NativeParallelEnqueueDequeue>b__15_0(Int32 i) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\ConcurrentBenchmark.cs:line 115
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()<---
+
+ ---> (Inner Exception #7) System.NullReferenceException: Object reference not set to an instance of an object.
+   at ConcurrentQueueBenchmark.<NativeParallelEnqueueDequeue>b__15_0(Int32 i) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\ConcurrentBenchmark.cs:line 115
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()<---
+
+ ---> (Inner Exception #8) System.NullReferenceException: Object reference not set to an instance of an object.
+   at ConcurrentQueueBenchmark.<NativeParallelEnqueueDequeue>b__15_0(Int32 i) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\ConcurrentBenchmark.cs:line 115
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()<---
+
+ ---> (Inner Exception #9) System.NullReferenceException: Object reference not set to an instance of an object.
+   at ConcurrentQueueBenchmark.<NativeParallelEnqueueDequeue>b__15_0(Int32 i) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\ConcurrentBenchmark.cs:line 115
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()<---
+
+ ---> (Inner Exception #10) System.NullReferenceException: Object reference not set to an instance of an object.
+   at ConcurrentQueueBenchmark.<NativeParallelEnqueueDequeue>b__15_0(Int32 i) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\ConcurrentBenchmark.cs:line 115
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()<---
+
+ ---> (Inner Exception #11) System.NullReferenceException: Object reference not set to an instance of an object.
+   at ConcurrentQueueBenchmark.<NativeParallelEnqueueDequeue>b__15_0(Int32 i) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\ConcurrentBenchmark.cs:line 115
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()<---
+
+ ---> (Inner Exception #12) System.NullReferenceException: Object reference not set to an instance of an object.
+   at ConcurrentQueueBenchmark.<NativeParallelEnqueueDequeue>b__15_0(Int32 i) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\ConcurrentBenchmark.cs:line 115
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()<---
+
+ ---> (Inner Exception #13) System.NullReferenceException: Object reference not set to an instance of an object.
+   at ConcurrentQueueBenchmark.<NativeParallelEnqueueDequeue>b__15_0(Int32 i) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\ConcurrentBenchmark.cs:line 115
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()<---
+
+ ---> (Inner Exception #14) System.NullReferenceException: Object reference not set to an instance of an object.
+   at ConcurrentQueueBenchmark.<NativeParallelEnqueueDequeue>b__15_0(Int32 i) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\ConcurrentBenchmark.cs:line 115
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()<---
+
+ ---> (Inner Exception #15) System.NullReferenceException: Object reference not set to an instance of an object.
+   at ConcurrentQueueBenchmark.<NativeParallelEnqueueDequeue>b__15_0(Int32 i) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\ConcurrentBenchmark.cs:line 115
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()<---
+
+ ---> (Inner Exception #16) System.NullReferenceException: Object reference not set to an instance of an object.
+   at ConcurrentQueueBenchmark.<NativeParallelEnqueueDequeue>b__15_0(Int32 i) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\ConcurrentBenchmark.cs:line 115
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()<---
+
+ ---> (Inner Exception #17) System.NullReferenceException: Object reference not set to an instance of an object.
+   at ConcurrentQueueBenchmark.<NativeParallelEnqueueDequeue>b__15_0(Int32 i) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\ConcurrentBenchmark.cs:line 115
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()<---
+
+ ---> (Inner Exception #18) System.NullReferenceException: Object reference not set to an instance of an object.
+   at ConcurrentQueueBenchmark.<NativeParallelEnqueueDequeue>b__15_0(Int32 i) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\ConcurrentBenchmark.cs:line 115
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()<---
+
+ ---> (Inner Exception #19) System.NullReferenceException: Object reference not set to an instance of an object.
+   at ConcurrentQueueBenchmark.<NativeParallelEnqueueDequeue>b__15_0(Int32 i) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\ConcurrentBenchmark.cs:line 115
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()<---
+
+ ---> (Inner Exception #20) System.NullReferenceException: Object reference not set to an instance of an object.
+   at ConcurrentQueueBenchmark.<NativeParallelEnqueueDequeue>b__15_0(Int32 i) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\ConcurrentBenchmark.cs:line 115
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()<---
+
+   --- End of inner exception stack trace ---
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+   at System.Reflection.MethodBaseInvoker.InvokeWithFewArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   at BenchmarkDotNet.Autogenerated.UniqueProgramName.AfterAssemblyLoadingAttached(String[] args) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\LuminCollection.Benchmark-.NET 9.0-1.notcs:line 57
+// AfterAll
+No Workload Results were obtained from the run.
+// Benchmark Process 39656 has exited with code -1.
+
+// ** Remained 1 (10.0 %) benchmark(s) to run. Estimated finish 2025-09-20 22:39 (0h 0m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: 高性能)
+// **************************
+// Benchmark: ConcurrentQueueBenchmark.UnsafeParallelEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "LuminCollection.Benchmark-.NET 9.0-1.dll" --anonymousPipes 1088 1096 --benchmarkName ConcurrentQueueBenchmark.UnsafeParallelEnqueueDequeue --job ".NET 9.0" --benchmarkId 9 in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\bin\Release\net9.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.15.3
+// Runtime=.NET 9.0.3 (9.0.3, 9.0.325.11113), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL,AvxVnni,SERIALIZE VectorSize=256
+// Job: .NET 9.0
+
+OverheadJitting  1: 1 op, 83500.00 ns, 83.5000 us/op
+
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation.
+ ---> System.AggregateException: One or more errors occurred. (Object reference not set to an instance of an object.) (Object reference not set to an instance of an object.) (Object reference not set to an instance of an object.) (Object reference not set to an instance of an object.) (Object reference not set to an instance of an object.) (Object reference not set to an instance of an object.) (Object reference not set to an instance of an object.) (Object reference not set to an instance of an object.) (Object reference not set to an instance of an object.) (Object reference not set to an instance of an object.) (Object reference not set to an instance of an object.) (Object reference not set to an instance of an object.) (Object reference not set to an instance of an object.) (Object reference not set to an instance of an object.) (Object reference not set to an instance of an object.) (Object reference not set to an instance of an object.) (Object reference not set to an instance of an object.) (Object reference not set to an instance of an object.) (Object reference not set to an instance of an object.) (Object reference not set to an instance of an object.) (Object reference not set to an instance of an object.)
+ ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at ConcurrentQueueBenchmark.<UnsafeParallelEnqueueDequeue>b__16_0(Int32 i) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\ConcurrentBenchmark.cs:line 125
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.TaskReplicator.Run[TState](ReplicatableUserAction`1 action, ParallelOptions options, Boolean stopOnFirstFailure)
+   at System.Threading.Tasks.Parallel.ForWorker[TLocal,TInt](TInt fromInclusive, TInt toExclusive, ParallelOptions parallelOptions, Action`1 body, Action`2 bodyWithState, Func`4 bodyWithLocal, Func`1 localInit, Action`1 localFinally)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.ForWorker[TLocal,TInt](TInt fromInclusive, TInt toExclusive, ParallelOptions parallelOptions, Action`1 body, Action`2 bodyWithState, Func`4 bodyWithLocal, Func`1 localInit, Action`1 localFinally)
+   at System.Threading.Tasks.Parallel.For(Int32 fromInclusive, Int32 toExclusive, Action`1 body)
+   at ConcurrentQueueBenchmark.UnsafeParallelEnqueueDequeue() in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\ConcurrentBenchmark.cs:line 123
+   at BenchmarkDotNet.Autogenerated.Runnable_9.WorkloadActionNoUnroll(Int64 invokeCount) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\LuminCollection.Benchmark-.NET 9.0-1.notcs:line 2039
+   at BenchmarkDotNet.Engines.Engine.Measure(Action`1 action, Int64 invokeCount)
+   at BenchmarkDotNet.Engines.Engine.RunIteration(IterationData data)
+   at BenchmarkDotNet.Engines.EngineFactory.Jit(Engine engine, Int32 jitIndex, Int32 invokeCount, Int32 unrollFactor)
+   at BenchmarkDotNet.Engines.EngineFactory.CreateReadyToRun(EngineParameters engineParameters)
+   at BenchmarkDotNet.Autogenerated.Runnable_9.Run(IHost host, String benchmarkName) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\LuminCollection.Benchmark-.NET 9.0-1.notcs:line 1904
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+ ---> (Inner Exception #1) System.NullReferenceException: Object reference not set to an instance of an object.
+   at ConcurrentQueueBenchmark.<UnsafeParallelEnqueueDequeue>b__16_0(Int32 i) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\ConcurrentBenchmark.cs:line 125
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()<---
+
+ ---> (Inner Exception #2) System.NullReferenceException: Object reference not set to an instance of an object.
+   at ConcurrentQueueBenchmark.<UnsafeParallelEnqueueDequeue>b__16_0(Int32 i) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\ConcurrentBenchmark.cs:line 125
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()<---
+
+ ---> (Inner Exception #3) System.NullReferenceException: Object reference not set to an instance of an object.
+   at ConcurrentQueueBenchmark.<UnsafeParallelEnqueueDequeue>b__16_0(Int32 i) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\ConcurrentBenchmark.cs:line 125
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()<---
+
+ ---> (Inner Exception #4) System.NullReferenceException: Object reference not set to an instance of an object.
+   at ConcurrentQueueBenchmark.<UnsafeParallelEnqueueDequeue>b__16_0(Int32 i) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\ConcurrentBenchmark.cs:line 125
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()<---
+
+ ---> (Inner Exception #5) System.NullReferenceException: Object reference not set to an instance of an object.
+   at ConcurrentQueueBenchmark.<UnsafeParallelEnqueueDequeue>b__16_0(Int32 i) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\ConcurrentBenchmark.cs:line 125
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()<---
+
+ ---> (Inner Exception #6) System.NullReferenceException: Object reference not set to an instance of an object.
+   at ConcurrentQueueBenchmark.<UnsafeParallelEnqueueDequeue>b__16_0(Int32 i) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\ConcurrentBenchmark.cs:line 125
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()<---
+
+ ---> (Inner Exception #7) System.NullReferenceException: Object reference not set to an instance of an object.
+   at ConcurrentQueueBenchmark.<UnsafeParallelEnqueueDequeue>b__16_0(Int32 i) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\ConcurrentBenchmark.cs:line 125
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()<---
+
+ ---> (Inner Exception #8) System.NullReferenceException: Object reference not set to an instance of an object.
+   at ConcurrentQueueBenchmark.<UnsafeParallelEnqueueDequeue>b__16_0(Int32 i) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\ConcurrentBenchmark.cs:line 125
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()<---
+
+ ---> (Inner Exception #9) System.NullReferenceException: Object reference not set to an instance of an object.
+   at ConcurrentQueueBenchmark.<UnsafeParallelEnqueueDequeue>b__16_0(Int32 i) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\ConcurrentBenchmark.cs:line 125
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()<---
+
+ ---> (Inner Exception #10) System.NullReferenceException: Object reference not set to an instance of an object.
+   at ConcurrentQueueBenchmark.<UnsafeParallelEnqueueDequeue>b__16_0(Int32 i) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\ConcurrentBenchmark.cs:line 125
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()<---
+
+ ---> (Inner Exception #11) System.NullReferenceException: Object reference not set to an instance of an object.
+   at ConcurrentQueueBenchmark.<UnsafeParallelEnqueueDequeue>b__16_0(Int32 i) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\ConcurrentBenchmark.cs:line 125
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()<---
+
+ ---> (Inner Exception #12) System.NullReferenceException: Object reference not set to an instance of an object.
+   at ConcurrentQueueBenchmark.<UnsafeParallelEnqueueDequeue>b__16_0(Int32 i) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\ConcurrentBenchmark.cs:line 125
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()<---
+
+ ---> (Inner Exception #13) System.NullReferenceException: Object reference not set to an instance of an object.
+   at ConcurrentQueueBenchmark.<UnsafeParallelEnqueueDequeue>b__16_0(Int32 i) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\ConcurrentBenchmark.cs:line 125
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()<---
+
+ ---> (Inner Exception #14) System.NullReferenceException: Object reference not set to an instance of an object.
+   at ConcurrentQueueBenchmark.<UnsafeParallelEnqueueDequeue>b__16_0(Int32 i) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\ConcurrentBenchmark.cs:line 125
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()<---
+
+ ---> (Inner Exception #15) System.NullReferenceException: Object reference not set to an instance of an object.
+   at ConcurrentQueueBenchmark.<UnsafeParallelEnqueueDequeue>b__16_0(Int32 i) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\ConcurrentBenchmark.cs:line 125
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()<---
+
+ ---> (Inner Exception #16) System.NullReferenceException: Object reference not set to an instance of an object.
+   at ConcurrentQueueBenchmark.<UnsafeParallelEnqueueDequeue>b__16_0(Int32 i) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\ConcurrentBenchmark.cs:line 125
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()<---
+
+ ---> (Inner Exception #17) System.NullReferenceException: Object reference not set to an instance of an object.
+   at ConcurrentQueueBenchmark.<UnsafeParallelEnqueueDequeue>b__16_0(Int32 i) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\ConcurrentBenchmark.cs:line 125
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()<---
+
+ ---> (Inner Exception #18) System.NullReferenceException: Object reference not set to an instance of an object.
+   at ConcurrentQueueBenchmark.<UnsafeParallelEnqueueDequeue>b__16_0(Int32 i) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\ConcurrentBenchmark.cs:line 125
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()<---
+
+ ---> (Inner Exception #19) System.NullReferenceException: Object reference not set to an instance of an object.
+   at ConcurrentQueueBenchmark.<UnsafeParallelEnqueueDequeue>b__16_0(Int32 i) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\ConcurrentBenchmark.cs:line 125
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()<---
+
+ ---> (Inner Exception #20) System.NullReferenceException: Object reference not set to an instance of an object.
+   at ConcurrentQueueBenchmark.<UnsafeParallelEnqueueDequeue>b__16_0(Int32 i) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\ConcurrentBenchmark.cs:line 125
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`2.<ForWorker>b__1(RangeWorker& currentWorker, Int64 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()<---
+
+   --- End of inner exception stack trace ---
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+   at System.Reflection.MethodBaseInvoker.InvokeWithFewArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   at BenchmarkDotNet.Autogenerated.UniqueProgramName.AfterAssemblyLoadingAttached(String[] args) in C:\Users\28027\Desktop\C#\LuminCollection\LuminCollection.Benchmark\bin\Release\net9.0\LuminCollection.Benchmark-.NET 9.0-1\LuminCollection.Benchmark-.NET 9.0-1.notcs:line 57
+// AfterAll
+No Workload Results were obtained from the run.
+// Benchmark Process 42904 has exited with code -1.
+
+// ** Remained 0 (0.0 %) benchmark(s) to run. Estimated finish 2025-09-20 22:39 (0h 0m from now) **
+Successfully reverted power plan (GUID: 6fecc5ae-f350-48a5-b669-b472cb895ccf FriendlyName: Turbo)
+// ***** BenchmarkRunner: Finish  *****
+
+// * Export *
+  BenchmarkDotNet.Artifacts\results\ConcurrentQueueBenchmark-report.csv
+  BenchmarkDotNet.Artifacts\results\ConcurrentQueueBenchmark-report-github.md
+  BenchmarkDotNet.Artifacts\results\ConcurrentQueueBenchmark-report.html
+
+// * Detailed results *
+ConcurrentQueueBenchmark.BclEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+Runtime = .NET 9.0.3 (9.0.3, 9.0.325.11113), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 10.037 ms, StdErr = 0.014 ms (0.14%), N = 14, StdDev = 0.052 ms
+Min = 9.967 ms, Q1 = 10.003 ms, Median = 10.032 ms, Q3 = 10.044 ms, Max = 10.143 ms
+IQR = 0.040 ms, LowerFence = 9.943 ms, UpperFence = 10.104 ms
+ConfidenceInterval = [9.978 ms; 10.096 ms] (CI 99.9%), Margin = 0.059 ms (0.59% of Mean)
+Skewness = 0.88, Kurtosis = 2.72, MValue = 2
+-------------------- Histogram --------------------
+[9.939 ms ; 10.172 ms) | @@@@@@@@@@@@@@
+---------------------------------------------------
+
+ConcurrentQueueBenchmark.LuminEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+Runtime = .NET 9.0.3 (9.0.3, 9.0.325.11113), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 29.848 ms, StdErr = 0.017 ms (0.06%), N = 15, StdDev = 0.064 ms
+Min = 29.725 ms, Q1 = 29.805 ms, Median = 29.851 ms, Q3 = 29.883 ms, Max = 29.970 ms
+IQR = 0.079 ms, LowerFence = 29.687 ms, UpperFence = 30.001 ms
+ConfidenceInterval = [29.779 ms; 29.916 ms] (CI 99.9%), Margin = 0.069 ms (0.23% of Mean)
+Skewness = 0.03, Kurtosis = 2.3, MValue = 2
+-------------------- Histogram --------------------
+[29.691 ms ; 30.005 ms) | @@@@@@@@@@@@@@@
+---------------------------------------------------
+
+ConcurrentQueueBenchmark.LuminUnsafeEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+Runtime = .NET 9.0.3 (9.0.3, 9.0.325.11113), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 188.622 ms, StdErr = 0.098 ms (0.05%), N = 14, StdDev = 0.367 ms
+Min = 188.143 ms, Q1 = 188.348 ms, Median = 188.614 ms, Q3 = 188.749 ms, Max = 189.295 ms
+IQR = 0.402 ms, LowerFence = 187.745 ms, UpperFence = 189.352 ms
+ConfidenceInterval = [188.208 ms; 189.036 ms] (CI 99.9%), Margin = 0.414 ms (0.22% of Mean)
+Skewness = 0.45, Kurtosis = 1.94, MValue = 2
+-------------------- Histogram --------------------
+[187.943 ms ; 189.495 ms) | @@@@@@@@@@@@@@
+---------------------------------------------------
+
+ConcurrentQueueBenchmark.NativeEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+Runtime = .NET 9.0.3 (9.0.3, 9.0.325.11113), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+There are not any results runs
+
+ConcurrentQueueBenchmark.UnsafeEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+Runtime = .NET 9.0.3 (9.0.3, 9.0.325.11113), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+There are not any results runs
+
+ConcurrentQueueBenchmark.BclParallelEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+Runtime = .NET 9.0.3 (9.0.3, 9.0.325.11113), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 221.173 ms, StdErr = 0.856 ms (0.39%), N = 15, StdDev = 3.315 ms
+Min = 215.602 ms, Q1 = 219.193 ms, Median = 222.766 ms, Q3 = 223.313 ms, Max = 224.069 ms
+IQR = 4.120 ms, LowerFence = 213.013 ms, UpperFence = 229.493 ms
+ConfidenceInterval = [217.629 ms; 224.717 ms] (CI 99.9%), Margin = 3.544 ms (1.60% of Mean)
+Skewness = -0.89, Kurtosis = 1.82, MValue = 2
+-------------------- Histogram --------------------
+[213.838 ms ; 225.390 ms) | @@@@@@@@@@@@@@@
+---------------------------------------------------
+
+ConcurrentQueueBenchmark.LuminParallelEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+Runtime = .NET 9.0.3 (9.0.3, 9.0.325.11113), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 120.725 ms, StdErr = 2.244 ms (1.86%), N = 100, StdDev = 22.437 ms
+Min = 80.355 ms, Q1 = 98.815 ms, Median = 126.852 ms, Q3 = 139.241 ms, Max = 158.537 ms
+IQR = 40.426 ms, LowerFence = 38.176 ms, UpperFence = 199.880 ms
+ConfidenceInterval = [113.115 ms; 128.335 ms] (CI 99.9%), Margin = 7.610 ms (6.30% of Mean)
+Skewness = -0.25, Kurtosis = 1.72, MValue = 3
+-------------------- Histogram --------------------
+[ 74.010 ms ;  86.498 ms) | @@@@@@@
+[ 86.498 ms ;  99.187 ms) | @@@@@@@@@@@@@@@@@@@@@
+[ 99.187 ms ; 111.277 ms) | @@@@@@
+[111.277 ms ; 123.966 ms) | @@@@@@@@@@@@@@
+[123.966 ms ; 139.562 ms) | @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+[139.562 ms ; 153.981 ms) | @@@@@@@@@@@@@@@@@@@
+[153.981 ms ; 164.882 ms) | @@@
+---------------------------------------------------
+
+ConcurrentQueueBenchmark.LuminUnsafeParallelEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+Runtime = .NET 9.0.3 (9.0.3, 9.0.325.11113), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 250.751 ms, StdErr = 1.339 ms (0.53%), N = 28, StdDev = 7.083 ms
+Min = 238.080 ms, Q1 = 246.176 ms, Median = 252.492 ms, Q3 = 254.240 ms, Max = 264.946 ms
+IQR = 8.064 ms, LowerFence = 234.080 ms, UpperFence = 266.336 ms
+ConfidenceInterval = [245.812 ms; 255.690 ms] (CI 99.9%), Margin = 4.939 ms (1.97% of Mean)
+Skewness = -0.09, Kurtosis = 2.33, MValue = 2
+-------------------- Histogram --------------------
+[236.788 ms ; 243.065 ms) | @@@@
+[243.065 ms ; 249.188 ms) | @@@@@@@@
+[249.188 ms ; 258.001 ms) | @@@@@@@@@@@@@
+[258.001 ms ; 265.293 ms) | @@@
+---------------------------------------------------
+
+ConcurrentQueueBenchmark.NativeParallelEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+Runtime = .NET 9.0.3 (9.0.3, 9.0.325.11113), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+There are not any results runs
+
+ConcurrentQueueBenchmark.UnsafeParallelEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+Runtime = .NET 9.0.3 (9.0.3, 9.0.325.11113), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+There are not any results runs
+
+// * Summary *
+
+BenchmarkDotNet v0.15.3, Windows 11 (10.0.26100.6584/24H2/2024Update/HudsonValley)
+13th Gen Intel Core i7-13650HX 2.60GHz, 1 CPU, 20 logical and 14 physical cores
+  [Host]   : .NET 9.0.3, X64 NativeAOT x86-64-v3
+  .NET 9.0 : .NET 9.0.3 (9.0.3, 9.0.325.11113), X64 RyuJIT x86-64-v3
+
+Job=.NET 9.0  Runtime=.NET 9.0  
+
+| Method                            | Mean      | Error    | StdDev    | Median    | Ratio | RatioSD | Completed Work Items | Lock Contentions | Allocated | Alloc Ratio |
+|---------------------------------- |----------:|---------:|----------:|----------:|------:|--------:|---------------------:|-----------------:|----------:|------------:|
+| BclEnqueueDequeue                 |  10.04 ms | 0.059 ms |  0.052 ms |  10.03 ms |  1.00 |    0.01 |                    - |                - |         - |          NA |
+| LuminEnqueueDequeue               |  29.85 ms | 0.069 ms |  0.064 ms |  29.85 ms |  2.97 |    0.02 |                    - |                - |         - |          NA |
+| LuminUnsafeEnqueueDequeue         | 188.62 ms | 0.414 ms |  0.367 ms | 188.61 ms | 18.79 |    0.10 |                    - |                - |         - |          NA |
+| NativeEnqueueDequeue              |        NA |       NA |        NA |        NA |     ? |       ? |                   NA |               NA |        NA |           ? |
+| UnsafeEnqueueDequeue              |        NA |       NA |        NA |        NA |     ? |       ? |                   NA |               NA |        NA |           ? |
+| BclParallelEnqueueDequeue         | 221.17 ms | 3.544 ms |  3.315 ms | 222.77 ms | 22.04 |    0.34 |              24.3333 |                - |    6141 B |          NA |
+| LuminParallelEnqueueDequeue       | 120.72 ms | 7.610 ms | 22.437 ms | 126.85 ms | 12.03 |    2.23 |              85.0000 |           0.2000 |   17371 B |          NA |
+| LuminUnsafeParallelEnqueueDequeue | 250.75 ms | 4.939 ms |  7.083 ms | 252.49 ms | 24.98 |    0.71 |              28.6667 |           0.3333 |    6749 B |          NA |
+| NativeParallelEnqueueDequeue      |        NA |       NA |        NA |        NA |     ? |       ? |                   NA |               NA |        NA |           ? |
+| UnsafeParallelEnqueueDequeue      |        NA |       NA |        NA |        NA |     ? |       ? |                   NA |               NA |        NA |           ? |
+
+Benchmarks with issues:
+  ConcurrentQueueBenchmark.NativeEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+  ConcurrentQueueBenchmark.UnsafeEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+  ConcurrentQueueBenchmark.NativeParallelEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+  ConcurrentQueueBenchmark.UnsafeParallelEnqueueDequeue: .NET 9.0(Runtime=.NET 9.0)
+
+// * Warnings *
+BaselineCustomAnalyzer
+  Summary -> A question mark '?' symbol indicates that it was not possible to compute the (Ratio, RatioSD, Alloc Ratio) column(s) because the baseline or benchmark could not be found, or the baseline value is too close to zero.
+MultimodalDistribution
+  ConcurrentQueueBenchmark.LuminParallelEnqueueDequeue: .NET 9.0 -> It seems that the distribution can have several modes (mValue = 3)
+
+// * Hints *
+Outliers
+  ConcurrentQueueBenchmark.BclEnqueueDequeue: .NET 9.0         -> 1 outlier  was  removed (10.19 ms)
+  ConcurrentQueueBenchmark.LuminUnsafeEnqueueDequeue: .NET 9.0 -> 1 outlier  was  removed (191.30 ms)
+
+// * Legends *
+  Mean                 : Arithmetic mean of all measurements
+  Error                : Half of 99.9% confidence interval
+  StdDev               : Standard deviation of all measurements
+  Median               : Value separating the higher half of all measurements (50th percentile)
+  Ratio                : Mean of the ratio distribution ([Current]/[Baseline])
+  RatioSD              : Standard deviation of the ratio distribution ([Current]/[Baseline])
+  Completed Work Items : The number of work items that have been processed in ThreadPool (per single operation)
+  Lock Contentions     : The number of times there was contention upon trying to take a Monitor's lock (per single operation)
+  Allocated            : Allocated memory per single operation (managed only, inclusive, 1KB = 1024B)
+  Alloc Ratio          : Allocated memory ratio distribution ([Current]/[Baseline])
+  1 ms                 : 1 Millisecond (0.001 sec)
+
+// * Diagnostic Output - MemoryDiagnoser *
+
+// * Diagnostic Output - ThreadingDiagnoser *
+
+
+// ***** BenchmarkRunner: End *****
+Run time: 00:02:56 (176.36 sec), executed benchmarks: 10
+
+Global total time: 00:03:04 (184.72 sec), executed benchmarks: 10
+// * Artifacts cleanup *
+Artifacts cleanup is finished

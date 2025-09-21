@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>ConcurrentQueueBenchmark-20250921-104555</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.15.3, Windows 11 (10.0.26100.6584/24H2/2024Update/HudsonValley)
+13th Gen Intel Core i7-13650HX 2.60GHz, 1 CPU, 20 logical and 14 physical cores
+  [Host]   : .NET 9.0.3, X64 NativeAOT x86-64-v3
+  .NET 9.0 : .NET 9.0.3 (9.0.3, 9.0.325.11113), X64 RyuJIT x86-64-v3
+</code></pre>
+<pre><code>Job=.NET 9.0  Runtime=.NET 9.0  
+</code></pre>
+
+<table>
+<thead><tr><th>Method                     </th><th>Mean</th><th>Error</th><th>StdDev</th><th>Ratio</th><th>RatioSD</th><th>Completed Work Items</th><th>Lock Contentions</th><th>Allocated</th><th>Alloc Ratio</th>
+</tr>
+</thead><tbody><tr><td>BclEnqueueDequeue</td><td>9.989 ms</td><td>0.0744 ms</td><td>0.0660 ms</td><td>1.00</td><td>0.01</td><td>-</td><td>-</td><td>-</td><td>NA</td>
+</tr><tr><td>LuminUnsafeEnqueueDequeue</td><td>25.658 ms</td><td>0.0787 ms</td><td>0.0698 ms</td><td>2.57</td><td>0.02</td><td>-</td><td>-</td><td>-</td><td>NA</td>
+</tr><tr><td>BclParallelEnqueueDequeue</td><td>216.260 ms</td><td>0.7056 ms</td><td>0.5892 ms</td><td>21.65</td><td>0.15</td><td>25.3333</td><td>-</td><td>6109 B</td><td>NA</td>
+</tr><tr><td>LuminUnsafeParallelEnqueueDequeue</td><td>NA</td><td>NA</td><td>NA</td><td>?</td><td>?</td><td>NA</td><td>NA</td><td>NA</td><td>?</td>
+</tr></tbody></table>
+</body>
+</html>

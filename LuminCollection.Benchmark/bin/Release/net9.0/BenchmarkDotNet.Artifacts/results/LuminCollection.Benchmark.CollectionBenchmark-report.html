@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>LuminCollection.Benchmark.CollectionBenchmark-20250921-141638</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.15.3, Windows 11 (10.0.26100.6584/24H2/2024Update/HudsonValley)
+13th Gen Intel Core i7-13650HX 2.60GHz, 1 CPU, 20 logical and 14 physical cores
+  [Host]   : .NET 9.0.3, X64 NativeAOT x86-64-v3
+  .NET 9.0 : .NET 9.0.3 (9.0.3, 9.0.325.11113), X64 RyuJIT x86-64-v3
+</code></pre>
+<pre><code>Job=.NET 9.0  Runtime=.NET 9.0  
+</code></pre>
+
+<table>
+<thead><tr><th>Method               </th><th>Mean</th><th>Error</th><th>StdDev</th><th>Gen0</th><th>Gen1</th><th>Gen2</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>SequentialAdd_LuminList</td><td>594.4 &mu;s</td><td>9.23 &mu;s</td><td>8.64 &mu;s</td><td>-</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>SequentialAdd_LuminSafeList</td><td>756.1 &mu;s</td><td>14.95 &mu;s</td><td>25.79 &mu;s</td><td>-</td><td>-</td><td>-</td><td>32 B</td>
+</tr><tr><td>SequentialAdd_UnsafeList</td><td>1,722.1 &mu;s</td><td>7.38 &mu;s</td><td>6.55 &mu;s</td><td>-</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>SequentialAdd_BclList</td><td>2,367.7 &mu;s</td><td>21.80 &mu;s</td><td>20.40 &mu;s</td><td>1968.7500</td><td>1968.7500</td><td>1968.7500</td><td>8389692 B</td>
+</tr></tbody></table>
+</body>
+</html>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Condition=" '$(TargetFramework)' == 'net8.0' AND '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)luminallocator\1.0.0\build\LuminAllocator.targets" Condition="Exists('$(NuGetPackageRoot)luminallocator\1.0.0\build\LuminAllocator.targets')" />
+  </ImportGroup>
+  <ImportGroup Condition=" '$(TargetFramework)' == 'net9.0' AND '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)luminallocator\1.0.0\build\LuminAllocator.targets" Condition="Exists('$(NuGetPackageRoot)luminallocator\1.0.0\build\LuminAllocator.targets')" />
+  </ImportGroup>
+  <ImportGroup Condition=" '$(TargetFramework)' == 'netstandard2.1' AND '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)luminallocator\1.0.0\build\LuminAllocator.targets" Condition="Exists('$(NuGetPackageRoot)luminallocator\1.0.0\build\LuminAllocator.targets')" />
+  </ImportGroup>
+</Project>

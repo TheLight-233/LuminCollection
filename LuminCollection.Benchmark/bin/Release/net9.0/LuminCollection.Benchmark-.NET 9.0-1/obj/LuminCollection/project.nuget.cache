@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "zsY5FtBW5Go=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\28027\\Desktop\\C#\\LuminCollection\\LuminCollection\\LuminCollection.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\28027\\.nuget\\packages\\luminallocator\\1.0.0\\luminallocator.1.0.0.nupkg.sha512",
+    "C:\\Users\\28027\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.1.2\\system.runtime.compilerservices.unsafe.6.1.2.nupkg.sha512",
+    "C:\\Users\\28027\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.11\\microsoft.netcore.app.ref.8.0.11.nupkg.sha512",
+    "C:\\Users\\28027\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.11\\microsoft.windowsdesktop.app.ref.8.0.11.nupkg.sha512",
+    "C:\\Users\\28027\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.11\\microsoft.aspnetcore.app.ref.8.0.11.nupkg.sha512"
+  ],
+  "logs": []
+}

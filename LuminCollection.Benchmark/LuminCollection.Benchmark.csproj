@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <PublishAot>true</PublishAot>
+        <InvariantGlobalization>true</InvariantGlobalization>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+      <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="BenchmarkDotNet" Version="0.15.3" />
+      <PackageReference Include="LuminAllocator" Version="1.0.0" />
+      <PackageReference Include="NativeCollections" Version="1.5.4" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\LuminCollection\LuminCollection.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="LuminAllocator">
+        <HintPath>..\..\LuminAllocator\LuminAllocator\bin\Release\net9.0\LuminAllocator.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+</Project>
