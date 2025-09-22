@@ -19,13 +19,13 @@ namespace LuminCollection.UnsafeCollection
         public ref bool this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => ref Unsafe.Add(ref Unsafe.AsRef<bool>(_bits), (nint)index);
+            get => ref Unsafe.Add(ref Unsafe.AsRef<bool>(_bits), (nuint)index);
         }
         
         public ref bool this[uint index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => ref Unsafe.Add(ref Unsafe.AsRef<bool>(_bits), (nint)index);
+            get => ref Unsafe.Add(ref Unsafe.AsRef<bool>(_bits), index);
         }
 
         #region Ctor
