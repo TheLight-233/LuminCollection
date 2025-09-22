@@ -6,6 +6,8 @@ namespace LuminCollection
     {
         private UnsafeCollection.LuminSparseSet<T> _sparseSet;
 
+        private nuint _version;
+
         public int Count => _sparseSet.Count;
         public int Capacity => _sparseSet.Capacity;
         public bool IsCreated => _sparseSet.IsCreated;
@@ -24,12 +26,17 @@ namespace LuminCollection
         public LuminSparseSet(int capacity = 0)
         {
             _sparseSet = new UnsafeCollection.LuminSparseSet<T>(capacity);
+            _version = 0;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void Dispose()
         {
-            if (IsCreated) _sparseSet.Dispose();
+            if (IsCreated)
+            {
+                _version = 0;
+                _sparseSet.Dispose();
+            }
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -41,6 +48,7 @@ namespace LuminCollection
             if (!IsCreated)
                 throw new ObjectDisposedException(nameof(LuminSparseSet<T>));
 #endif
+            _version++;
             _sparseSet.Clear();
         }
 
@@ -65,7 +73,9 @@ namespace LuminCollection
             if (!IsCreated)
                 throw new ObjectDisposedException(nameof(LuminSparseSet<T>));
 #endif
-            return _sparseSet.Add(key, value);
+            var res = _sparseSet.Add(key, value);
+            if (res) _version++;
+            return res;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -77,7 +87,9 @@ namespace LuminCollection
             if (!IsCreated)
                 throw new ObjectDisposedException(nameof(LuminSparseSet<T>));
 #endif
-            return _sparseSet.Insert(key, value);
+            var res = _sparseSet.Insert(key, value);
+            if (res is UnsafeCollection.LuminSparseSet<T>.InsertResult.Success) _version++;
+            return res;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -89,7 +101,9 @@ namespace LuminCollection
             if (!IsCreated)
                 throw new ObjectDisposedException(nameof(LuminSparseSet<T>));
 #endif
-            return _sparseSet.Remove(key);
+            var res = _sparseSet.Remove(key);
+            if (res) _version++;
+            return res;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -101,7 +115,9 @@ namespace LuminCollection
             if (!IsCreated)
                 throw new ObjectDisposedException(nameof(LuminSparseSet<T>));
 #endif
-            return _sparseSet.Remove(key, out value);
+            var res = _sparseSet.Remove(key, out value);
+            if (res) _version++;
+            return res;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -194,6 +210,7 @@ namespace LuminCollection
             if (index < 0 || index >= Count)
                 throw new ArgumentOutOfRangeException(nameof(index));
             _sparseSet.RemoveAt(index);
+            _version++;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -208,6 +225,7 @@ namespace LuminCollection
             if (index < 0 || index >= Count)
                 throw new ArgumentOutOfRangeException(nameof(index));
             _sparseSet.RemoveAt(index, out keyValuePair);
+            _version++;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -259,24 +277,43 @@ namespace LuminCollection
             if (!IsCreated)
                 throw new ObjectDisposedException(nameof(LuminSparseSet<T>));
 #endif
-            return new Enumerator(_sparseSet);
+            return new Enumerator(this);
         }
         
 
         public struct Enumerator
         {
             private UnsafeCollection.LuminSparseSet<T>.Enumerator _e;
+            private readonly LuminSparseSet<T> _sparseSet;
+            private readonly nuint _version;
             
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Enumerator(UnsafeCollection.LuminSparseSet<T> sparseSet) => _e = sparseSet.GetEnumerator();
+            public Enumerator(LuminSparseSet<T> sparseSet)
+            {
+                _sparseSet = sparseSet;
+                _version = sparseSet._version;
+                _e = sparseSet._sparseSet.GetEnumerator();
+            }
 
             public KeyValuePair<int, T> Current => _e.Current;
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public bool MoveNext() => _e.MoveNext();
+            public bool MoveNext()
+            {
+                if (_version != _sparseSet._version)
+                    ThrowHelpers.ThrowInvalidOperationException("Collection was modified");
+                
+                return _e.MoveNext();
+            }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public void Reset() => _e.Reset();
+            public void Reset()
+            {
+                if (_version != _sparseSet._version)
+                    ThrowHelpers.ThrowInvalidOperationException("Collection was modified");
+                
+                _e.Reset();
+            }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public void Dispose() => _e.Dispose();
@@ -296,17 +333,36 @@ namespace LuminCollection
             public struct KeyEnumerator
             {
                 private UnsafeCollection.LuminSparseSet<T>.KeyCollection.KeyEnumerator _e;
+                private readonly LuminSparseSet<T> _sparseSet;
+                private readonly nuint _version;
                 
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                internal KeyEnumerator(LuminSparseSet<T> sparseSet) => _e = sparseSet._sparseSet.Keys.GetEnumerator();
+                internal KeyEnumerator(LuminSparseSet<T> sparseSet)
+                {
+                    _sparseSet = sparseSet;
+                    _version = sparseSet._version;
+                    _e = sparseSet._sparseSet.Keys.GetEnumerator();
+                }
 
                 public int Current => _e.Current;
 
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                public bool MoveNext() => _e.MoveNext();
+                public bool MoveNext()
+                {
+                    if (_version != _sparseSet._version)
+                        ThrowHelpers.ThrowInvalidOperationException("Collection was modified");
+                    
+                    return _e.MoveNext();
+                }
 
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                public void Reset() => _e.Reset();
+                public void Reset()
+                {
+                    if (_version != _sparseSet._version)
+                        ThrowHelpers.ThrowInvalidOperationException("Collection was modified");
+                    
+                    _e.Reset();
+                }
 
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 public void Dispose() => _e.Dispose();
@@ -327,17 +383,36 @@ namespace LuminCollection
             public struct ValueEnumerator
             {
                 private UnsafeCollection.LuminSparseSet<T>.ValueCollection.ValueEnumerator _e;
+                private readonly LuminSparseSet<T> _sparseSet;
+                private readonly nuint _version;
                 
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                internal ValueEnumerator(LuminSparseSet<T> sparseSet) => _e = sparseSet._sparseSet.Values.GetEnumerator();
+                internal ValueEnumerator(LuminSparseSet<T> sparseSet)
+                {
+                    _sparseSet = sparseSet;
+                    _version = sparseSet._version;
+                    _e = sparseSet._sparseSet.Values.GetEnumerator();
+                }
 
                 public T Current => _e.Current;
 
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                public bool MoveNext() => _e.MoveNext();
+                public bool MoveNext()
+                {
+                    if (_version != _sparseSet._version)
+                        ThrowHelpers.ThrowInvalidOperationException("Collection was modified");
+                    
+                    return _e.MoveNext();
+                }
 
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                public void Reset() => _e.Reset();
+                public void Reset()
+                {
+                    if (_version != _sparseSet._version)
+                        ThrowHelpers.ThrowInvalidOperationException("Collection was modified");
+                    
+                    _e.Reset();
+                }
 
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 public void Dispose() => _e.Dispose();
