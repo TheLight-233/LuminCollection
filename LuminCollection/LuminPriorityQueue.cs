@@ -70,7 +70,7 @@ namespace LuminCollection
             
             
             var res = _priorityQueue.TryDequeue(out value);
-            _version++;
+            if (res) _version++;
             return res;
         }
 
