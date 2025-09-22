@@ -12,6 +12,8 @@ namespace LuminCollection
     {
         private UnsafeCollection.LuminHashSet<T> _hashSet;
 
+        private nuint _version;
+
         public int Count => _hashSet.Count;
         public int Capacity => _hashSet.Capacity;
         public bool IsCreated => _hashSet.IsCreated;
@@ -23,6 +25,7 @@ namespace LuminCollection
                 throw new ArgumentOutOfRangeException(nameof(capacity), "Capacity must be greater than zero");
             
             _hashSet = new UnsafeCollection.LuminHashSet<T>(capacity);
+            _version++;
         }
 
         public LuminHashSet() : this(0) { }
@@ -40,6 +43,7 @@ namespace LuminCollection
 #endif
             
             _hashSet = new UnsafeCollection.LuminHashSet<T>(in source._hashSet);
+            _version = source._version;
         }
         #endregion
 
@@ -56,6 +60,8 @@ namespace LuminCollection
             
             if (!_hashSet.Add(item))
                 throw new ArgumentException("An element with the same value already exists");
+            
+            _version++;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -68,7 +74,9 @@ namespace LuminCollection
                 throw new ObjectDisposedException(nameof(LuminHashSet<T>));
 #endif
             
-            return _hashSet.Add(item);
+            var res = _hashSet.Add(item);
+            _version++;
+            return res;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -94,7 +102,9 @@ namespace LuminCollection
                 throw new ObjectDisposedException(nameof(LuminHashSet<T>));
 #endif
             
-            return _hashSet.Remove(item);
+            var res = _hashSet.Remove(item);
+            _version++;
+            return res;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -107,7 +117,9 @@ namespace LuminCollection
                 throw new ObjectDisposedException(nameof(LuminHashSet<T>));
 #endif
             
-            return _hashSet.Remove(equalValue, out actualValue);
+            var res = _hashSet.Remove(equalValue, out actualValue);
+            _version++;
+            return res;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -134,6 +146,7 @@ namespace LuminCollection
 #endif
             
             _hashSet.Clear();
+            _version++;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -185,7 +198,7 @@ namespace LuminCollection
                 throw new ObjectDisposedException(nameof(LuminHashSet<T>));
 #endif
             
-            return new Enumerator(_hashSet);
+            return new Enumerator(this);
         }
 
         IEnumerator<T> IEnumerable<T>.GetEnumerator() => GetEnumerator();
@@ -198,6 +211,7 @@ namespace LuminCollection
             if (IsCreated)
             {
                 _hashSet.Dispose();
+                _version = 0;
             }
         }
         #endregion
@@ -206,20 +220,39 @@ namespace LuminCollection
         public struct Enumerator : IEnumerator<T>
         {
             private UnsafeCollection.LuminHashSet<T>.Enumerator _e;
+            private readonly LuminHashSet<T> _hashSet;
+            private readonly nuint _version;
             
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            internal Enumerator(UnsafeCollection.LuminHashSet<T> hashSet) => _e = hashSet.GetEnumerator();
-            
+            internal Enumerator(LuminHashSet<T> hashSet)
+            {
+                _hashSet = hashSet;
+                _version = hashSet._version;
+                _e = hashSet._hashSet.GetEnumerator();
+            }
+
             public T Current => _e.Current;
             
             object IEnumerator.Current => Current;
             
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public bool MoveNext() => _e.MoveNext();
-            
+            public bool MoveNext()
+            {
+                if (_version != _hashSet._version)
+                    ThrowHelpers.ThrowInvalidOperationException("Collection was modified");
+                
+                return _e.MoveNext();
+            }
+
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public void Reset() => _e.Reset();
-            
+            public void Reset()
+            {
+                if (_version != _hashSet._version)
+                    ThrowHelpers.ThrowInvalidOperationException("Collection was modified");
+                
+                _e.Reset();
+            }
+
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public void Dispose() => _e.Dispose();
         }
