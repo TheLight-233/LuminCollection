@@ -19,7 +19,6 @@ public unsafe struct LuminHashSet<T> : IDisposable
     private int* _buckets;
     private Entry* _entries;
     private int _count;
-    private int _version;
     private int _freeList;
     private int _freeCount;
     private int _capacity;
@@ -37,7 +36,6 @@ public unsafe struct LuminHashSet<T> : IDisposable
         _count = 0;
         _freeList = -1;
         _freeCount = 0;
-        _version = 0;
 
         nuint bucketAlign = LuminMemoryHelper.AlignOf<int>();
         nuint entryAlign = LuminMemoryHelper.AlignOf<Entry>();
@@ -67,7 +65,6 @@ public unsafe struct LuminHashSet<T> : IDisposable
         _count = 0;
         _freeList = -1;
         _freeCount = 0;
-        _version = 0;
 
         nuint bucketAlign = LuminMemoryHelper.AlignOf<int>();
         nuint entryAlign = LuminMemoryHelper.AlignOf<Entry>();
@@ -102,7 +99,6 @@ public unsafe struct LuminHashSet<T> : IDisposable
         _count = src._count;
         _freeList = src._freeList;
         _freeCount = src._freeCount;
-        _version = src._version;
         _fastModMultiplier = src._fastModMultiplier;
 
         nuint bucketAlign = LuminMemoryHelper.AlignOf<int>();
@@ -171,7 +167,6 @@ public unsafe struct LuminHashSet<T> : IDisposable
         newEntry.Value = item;
             
         bucket = index + 1;
-        _version++;
             
         return true;
     }
@@ -227,7 +222,6 @@ public unsafe struct LuminHashSet<T> : IDisposable
                     
                 _freeList = i;
                 _freeCount++;
-                _version++;
                     
                 return true;
             }
@@ -272,7 +266,6 @@ public unsafe struct LuminHashSet<T> : IDisposable
                     
                 _freeList = i;
                 _freeCount++;
-                _version++;
                     
                 return true;
             }
@@ -334,7 +327,6 @@ public unsafe struct LuminHashSet<T> : IDisposable
             _count = 0;
             _freeList = -1;
             _freeCount = 0;
-            _version++;
         }
     }
 
@@ -398,7 +390,6 @@ public unsafe struct LuminHashSet<T> : IDisposable
         _count = 0;
         _freeList = -1;
         _freeCount = 0;
-        _version = 0;
         _capacity = 0;
     }
     #endregion
@@ -512,10 +503,9 @@ public unsafe struct LuminHashSet<T> : IDisposable
         private T _current;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        internal Enumerator(LuminHashSet<T> hashSet)
+        internal Enumerator(in LuminHashSet<T> hashSet)
         {
             _hashSet = hashSet;
-            _version = hashSet._version;
             _index = 0;
             _current = default;
         }
@@ -523,9 +513,6 @@ public unsafe struct LuminHashSet<T> : IDisposable
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool MoveNext()
         {
-            if (_version != _hashSet._version)
-                ThrowHelpers.ThrowInvalidOperationException("Collection was modified");
-                
             while (_index < _hashSet._count)
             {
                 ref Entry entry = ref Unsafe.Add(ref Unsafe.AsRef<Entry>(_hashSet._entries), _index);
