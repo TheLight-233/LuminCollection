@@ -258,8 +258,14 @@ namespace LuminCollection
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public void Reset() => _e.Reset();
-            
+            public void Reset()
+            {
+                if (_version != _dict._version)
+                    ThrowHelpers.ThrowInvalidOperationException("Collection was modified");
+                
+                _e.Reset();
+            }
+
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public void Dispose() => _e.Dispose();
         }
