@@ -75,7 +75,7 @@ namespace LuminCollection
 #endif
             
             var res = _hashSet.Add(item);
-            _version++;
+            if (res) _version++;
             return res;
         }
 
@@ -103,7 +103,7 @@ namespace LuminCollection
 #endif
             
             var res = _hashSet.Remove(item);
-            _version++;
+            if (res) _version++;
             return res;
         }
 
@@ -118,7 +118,7 @@ namespace LuminCollection
 #endif
             
             var res = _hashSet.Remove(equalValue, out actualValue);
-            _version++;
+            if (res) _version++;
             return res;
         }
 
