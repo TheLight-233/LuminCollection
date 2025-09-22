@@ -13,6 +13,8 @@ namespace LuminCollection
     {
         private UnsafeCollection.LuminDictionary<TKey, TValue> _dictionary;
 
+        private nuint _version;
+
         public int Count => _dictionary.Count;
         public int Capacity => _dictionary.Capacity;
         public bool IsCreated => _dictionary.IsCreated;
@@ -39,6 +41,7 @@ namespace LuminCollection
                 throw new ArgumentOutOfRangeException(nameof(capacity), "Capacity must be greater than zero");
             
             _dictionary = new UnsafeCollection.LuminDictionary<TKey, TValue>(capacity);
+            _version = 0;
         }
 
         public LuminDictionary() : this(0) { }
@@ -55,6 +58,7 @@ namespace LuminCollection
 #endif
             
             _dictionary = new UnsafeCollection.LuminDictionary<TKey, TValue>(in source._dictionary);
+            _version = source._version;
         }
         #endregion
 
@@ -71,6 +75,8 @@ namespace LuminCollection
             
             if (!_dictionary.TryAdd(key, value))
                 throw new ArgumentException("An element with the same key already exists");
+            
+            _version++;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -83,7 +89,9 @@ namespace LuminCollection
                 throw new ObjectDisposedException(nameof(LuminDictionary<TKey, TValue>));
 #endif
             
-            return _dictionary.TryAdd(key, value);
+            var res = _dictionary.TryAdd(key, value);
+            _version++;
+            return res;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -148,7 +156,9 @@ namespace LuminCollection
                 throw new ObjectDisposedException(nameof(LuminDictionary<TKey, TValue>));
 #endif
             
-            return _dictionary.Remove(key);
+            var res = _dictionary.Remove(key);
+            _version++;
+            return res;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -162,6 +172,7 @@ namespace LuminCollection
 #endif
             
             _dictionary.Clear();
+            _version++;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -200,7 +211,7 @@ namespace LuminCollection
                 throw new ObjectDisposedException(nameof(LuminDictionary<TKey, TValue>));
 #endif
             
-            return new Enumerator(_dictionary);
+            return new Enumerator(this);
         }
 
         IEnumerator<KeyValuePair<TKey, TValue>> IEnumerable<KeyValuePair<TKey, TValue>>.GetEnumerator() => GetEnumerator();
@@ -213,6 +224,7 @@ namespace LuminCollection
             if (IsCreated)
             {
                 _dictionary.Dispose();
+                _version = 0;
             }
         }
         #endregion
@@ -221,17 +233,30 @@ namespace LuminCollection
         public struct Enumerator : IEnumerator<KeyValuePair<TKey, TValue>>
         {
             private UnsafeCollection.LuminDictionary<TKey, TValue>.Enumerator _e;
+            private readonly LuminDictionary<TKey, TValue> _dict;
+            private readonly nuint _version;
             
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            internal Enumerator(UnsafeCollection.LuminDictionary<TKey, TValue> dictionary) => _e = dictionary.GetEnumerator();
-            
+            internal Enumerator(LuminDictionary<TKey, TValue> dictionary)
+            {
+                _version = dictionary._version;
+                _dict = dictionary;
+                _e = dictionary._dictionary.GetEnumerator();
+            }
+
             public KeyValuePair<TKey, TValue> Current => _e.Current;
             
             object IEnumerator.Current => Current;
             
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public bool MoveNext() => _e.MoveNext();
-            
+            public bool MoveNext()
+            {
+                if (_version != _dict._version)
+                    ThrowHelpers.ThrowInvalidOperationException("Collection was modified");
+                
+                return _e.MoveNext();
+            }
+
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public void Reset() => _e.Reset();
             
