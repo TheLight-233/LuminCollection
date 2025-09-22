@@ -18,13 +18,13 @@ namespace LuminCollection.UnsafeCollection
         public ref T this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => ref Unsafe.Add(ref Unsafe.AsRef<T>(_data), (nint)index);
+            get => ref Unsafe.Add(ref Unsafe.AsRef<T>(_data), (nuint)index);
         }
 
         public ref T this[uint index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => ref Unsafe.Add(ref Unsafe.AsRef<T>(_data), (nint)index);
+            get => ref Unsafe.Add(ref Unsafe.AsRef<T>(_data), index);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -274,6 +274,10 @@ namespace LuminCollection.UnsafeCollection
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static LuminArray<TTo> ToLuminArray<TTo>(this Span<TTo> span) where TTo : unmanaged
+            => new((TTo*)Unsafe.AsPointer(ref MemoryMarshal.GetReference(span)), span.Length);
+        
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static LuminArray<TTo> ToLuminArray<TTo>(this ReadOnlySpan<TTo> span) where TTo : unmanaged
             => new((TTo*)Unsafe.AsPointer(ref MemoryMarshal.GetReference(span)), span.Length);
     }
 }
