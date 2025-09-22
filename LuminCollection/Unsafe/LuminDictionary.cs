@@ -21,7 +21,6 @@ public unsafe struct LuminDictionary<TKey, TValue> : IDisposable
     private int* _buckets;
     private Entry* _entries;
     private int _count;
-    private int _version;
     private int _freeList;
     private int _freeCount;
     private int _capacity;
@@ -45,7 +44,6 @@ public unsafe struct LuminDictionary<TKey, TValue> : IDisposable
         _count = 0;
         _freeList = -1;
         _freeCount = 0;
-        _version = 0;
 
         nuint bucketAlign = LuminMemoryHelper.AlignOf<int>();
         nuint entryAlign = LuminMemoryHelper.AlignOf<Entry>();
@@ -75,7 +73,6 @@ public unsafe struct LuminDictionary<TKey, TValue> : IDisposable
         _count = 0;
         _freeList = -1;
         _freeCount = 0;
-        _version = 0;
 
         nuint bucketAlign = LuminMemoryHelper.AlignOf<int>();
         nuint entryAlign = LuminMemoryHelper.AlignOf<Entry>();
@@ -109,7 +106,6 @@ public unsafe struct LuminDictionary<TKey, TValue> : IDisposable
         _count = src._count;
         _freeList = src._freeList;
         _freeCount = src._freeCount;
-        _version = src._version;
         _fastModMultiplier = src._fastModMultiplier;
 
         nuint bucketAlign = LuminMemoryHelper.AlignOf<int>();
@@ -185,7 +181,6 @@ public unsafe struct LuminDictionary<TKey, TValue> : IDisposable
         newEntry.Value = value;
             
         bucket = index + 1;
-        _version++;
             
         return true;
     }
@@ -238,7 +233,6 @@ public unsafe struct LuminDictionary<TKey, TValue> : IDisposable
         newEntry.Value = default;
             
         bucket = index + 1;
-        _version++;
 
         exists = false;
         return ref newEntry.Value;
@@ -353,7 +347,6 @@ public unsafe struct LuminDictionary<TKey, TValue> : IDisposable
                     
                 _freeList = i;
                 _freeCount++;
-                _version++;
                     
                 return true;
             }
@@ -386,7 +379,6 @@ public unsafe struct LuminDictionary<TKey, TValue> : IDisposable
             _count = 0;
             _freeList = -1;
             _freeCount = 0;
-            _version++;
         }
     }
 
@@ -432,7 +424,6 @@ public unsafe struct LuminDictionary<TKey, TValue> : IDisposable
         _count = 0;
         _freeList = -1;
         _freeCount = 0;
-        _version = 0;
         _capacity = 0;
     }
     #endregion
@@ -541,25 +532,20 @@ public unsafe struct LuminDictionary<TKey, TValue> : IDisposable
     public struct Enumerator
     {
         private readonly LuminDictionary<TKey, TValue> _dictionary;
-        private readonly int _version;
         private int _index;
         private KeyValuePair<TKey, TValue> _current;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        internal Enumerator(LuminDictionary<TKey, TValue> dictionary)
+        internal Enumerator(in LuminDictionary<TKey, TValue> dictionary)
         {
             _dictionary = dictionary;
-            _version = dictionary._version;
             _index = 0;
             _current = default;
         }
-            
+        
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool MoveNext()
         {
-            if (_version != _dictionary._version)
-                ThrowHelpers.ThrowInvalidOperationException("Collection was modified");
-                
             while (_index < _dictionary._count)
             {
                 ref Entry entry = ref Unsafe.Add(ref Unsafe.AsRef<Entry>(_dictionary._entries), _index);
