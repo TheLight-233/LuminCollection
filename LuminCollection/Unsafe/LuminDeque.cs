@@ -21,13 +21,13 @@ namespace LuminCollection.UnsafeCollection
         public ref T this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => ref _array[(_head + index) % _capacity];
+            get => ref Unsafe.Add(ref Unsafe.AsRef<T>(_array), (nuint)((_head + index) % _capacity));
         }
         
         public ref T this[uint index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => ref _array[(_head + index) % _capacity];
+            get => ref Unsafe.Add(ref Unsafe.AsRef<T>(_array), (nuint)((_head + index) % _capacity));
         }
 
         public ref T Front => ref _array[_head];
