@@ -5,8 +5,6 @@
 ## High-performance C# unmanaged collections based on Unsafe and mimalloc
 
 
-![性能比较](./performancephoto.png)
-
 LuminCollection是基于Unsafe和mimalloc的C#非托管集合，它具有以下优点：
 
 *   通过mimalloc实现高性能内存分配
