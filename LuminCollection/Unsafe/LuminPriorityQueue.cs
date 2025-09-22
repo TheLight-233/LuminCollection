@@ -21,7 +21,6 @@ namespace LuminCollection.UnsafeCollection
         private Item* _items;
         private int _count;
         private int _capacity;
-        private int _version;
 
         public int Count => _count;
         public int Capacity => _capacity;
@@ -33,7 +32,6 @@ namespace LuminCollection.UnsafeCollection
         {
             _capacity = GetPrime(0);;
             _count = 0;
-            _version = 0;
 
             nuint itemAlign = LuminMemoryHelper.AlignOf<Item>();
             var size = _capacity * sizeof(Item);
@@ -50,7 +48,6 @@ namespace LuminCollection.UnsafeCollection
             
             _capacity = GetPrime(capacity);
             _count = 0;
-            _version = 0;
 
             nuint itemAlign = LuminMemoryHelper.AlignOf<Item>();
             var size = _capacity * sizeof(Item);
@@ -66,14 +63,12 @@ namespace LuminCollection.UnsafeCollection
             {
                 _items = null;
                 _count = 0;
-                _version = 0;
                 _capacity = 0;
                 return;
             }
 
             _capacity = src._capacity;
             _count = src._count;
-            _version = src._version;
 
             nuint itemAlign = LuminMemoryHelper.AlignOf<Item>();
             var size = _capacity * sizeof(Item);
@@ -98,7 +93,6 @@ namespace LuminCollection.UnsafeCollection
             _items[_count].Priority = priority;
             _items[_count].Value = value;
             _count++;
-            _version++;
 
             HeapifyUp(_count - 1);
         }
@@ -126,8 +120,7 @@ namespace LuminCollection.UnsafeCollection
                 _items[0] = _items[_count];
                 HeapifyDown(0);
             }
-
-            _version++;
+            
             return true;
         }
 
@@ -148,7 +141,6 @@ namespace LuminCollection.UnsafeCollection
         public void Clear()
         {
             _count = 0;
-            _version++;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -261,7 +253,6 @@ namespace LuminCollection.UnsafeCollection
             }
             
             _count = 0;
-            _version = 0;
             _capacity = 0;
         }
         #endregion
@@ -269,16 +260,14 @@ namespace LuminCollection.UnsafeCollection
         #region Enumerator
         public struct Enumerator
         {
-            private LuminPriorityQueue<TKey, TValue> _priorityQueue;
+            private readonly LuminPriorityQueue<TKey, TValue> _priorityQueue;
             private int _index;
-            private int _version;
             
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             internal Enumerator(LuminPriorityQueue<TKey, TValue> priorityQueue)
             {
                 _priorityQueue = priorityQueue;
                 _index = -1;
-                _version = priorityQueue._version;
             }
             
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
