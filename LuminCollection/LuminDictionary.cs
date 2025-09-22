@@ -90,7 +90,7 @@ namespace LuminCollection
 #endif
             
             var res = _dictionary.TryAdd(key, value);
-            _version++;
+            if (res) _version++;
             return res;
         }
 
@@ -157,7 +157,7 @@ namespace LuminCollection
 #endif
             
             var res = _dictionary.Remove(key);
-            _version++;
+            if (res) _version++;
             return res;
         }
 
