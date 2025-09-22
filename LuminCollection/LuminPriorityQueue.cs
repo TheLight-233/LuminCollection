@@ -9,6 +9,8 @@ namespace LuminCollection
     {
         private UnsafeCollection.LuminPriorityQueue<TKey, TValue> _priorityQueue;
 
+        private nuint _version;
+
         public int Count => _priorityQueue.Count;
         public int Capacity => _priorityQueue.Capacity;
         public bool IsCreated => _priorityQueue.IsCreated;
@@ -20,6 +22,7 @@ namespace LuminCollection
                 throw new ArgumentOutOfRangeException(nameof(capacity), "Capacity must be greater than zero");
             
             _priorityQueue = new UnsafeCollection.LuminPriorityQueue<TKey, TValue>(capacity);
+            _version = 0;
         }
 
         public LuminPriorityQueue() : this(0) { }
@@ -33,6 +36,7 @@ namespace LuminCollection
                 throw new ObjectDisposedException(nameof(LuminPriorityQueue<TKey, TValue>));
             
             _priorityQueue = new UnsafeCollection.LuminPriorityQueue<TKey, TValue>(in source._priorityQueue);
+            _version = source._version;
         }
         #endregion
 
@@ -44,6 +48,7 @@ namespace LuminCollection
                 throw new ObjectDisposedException(nameof(LuminPriorityQueue<TKey, TValue>));
             
             _priorityQueue.Enqueue(value, priority);
+            _version++;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -52,6 +57,7 @@ namespace LuminCollection
             if (!IsCreated)
                 throw new ObjectDisposedException(nameof(LuminPriorityQueue<TKey, TValue>));
             
+            _version++;
             return _priorityQueue.Dequeue();
         }
 
@@ -62,7 +68,10 @@ namespace LuminCollection
             if (!IsCreated)
                 throw new ObjectDisposedException(nameof(LuminPriorityQueue<TKey, TValue>));
             
-            return _priorityQueue.TryDequeue(out value);
+            
+            var res = _priorityQueue.TryDequeue(out value);
+            _version++;
+            return res;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -81,6 +90,7 @@ namespace LuminCollection
                 throw new ObjectDisposedException(nameof(LuminPriorityQueue<TKey, TValue>));
             
             _priorityQueue.Clear();
+            _version++;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -107,7 +117,7 @@ namespace LuminCollection
             if (!IsCreated)
                 throw new ObjectDisposedException(nameof(LuminPriorityQueue<TKey, TValue>));
             
-            return new Enumerator(_priorityQueue);
+            return new Enumerator(this);
         }
 
         IEnumerator<KeyValuePair<TKey, TValue>> IEnumerable<KeyValuePair<TKey, TValue>>.GetEnumerator() => GetEnumerator();
@@ -120,6 +130,7 @@ namespace LuminCollection
             if (IsCreated)
             {
                 _priorityQueue.Dispose();
+                _version = 0;
             }
         }
         #endregion
@@ -128,20 +139,39 @@ namespace LuminCollection
         public struct Enumerator : IEnumerator<KeyValuePair<TKey, TValue>>
         {
             private UnsafeCollection.LuminPriorityQueue<TKey, TValue>.Enumerator _e;
+            private readonly LuminPriorityQueue<TKey, TValue> _priorityQueue;
+            private readonly nuint _version;
             
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            internal Enumerator(UnsafeCollection.LuminPriorityQueue<TKey, TValue> priorityQueue) => _e = priorityQueue.GetEnumerator();
-            
+            internal Enumerator(LuminPriorityQueue<TKey, TValue> priorityQueue)
+            {
+                _priorityQueue = priorityQueue;
+                _version = priorityQueue._version;
+                _e = priorityQueue._priorityQueue.GetEnumerator();
+            }
+
             public KeyValuePair<TKey, TValue> Current => _e.Current;
             
             object IEnumerator.Current => Current;
             
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public bool MoveNext() => _e.MoveNext();
-            
+            public bool MoveNext()
+            {
+                if (_version != _priorityQueue._version)
+                    ThrowHelpers.ThrowInvalidOperationException("Collection was modified");
+                
+                return _e.MoveNext();
+            }
+
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public void Reset() => _e.Reset();
-            
+            public void Reset()
+            {
+                if (_version != _priorityQueue._version)
+                    ThrowHelpers.ThrowInvalidOperationException("Collection was modified");
+                
+                _e.Reset();
+            }
+
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public void Dispose() => _e.Dispose();
         }
