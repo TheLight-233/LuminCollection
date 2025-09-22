@@ -9,7 +9,6 @@ namespace LuminCollection.UnsafeCollection
     {
         private LuminList<Entry> _dense;
         private LuminList<int> _sparse;
-        private int _version;
 
         public int Count => _dense.Count;
         public int Capacity => _sparse.Capacity;
@@ -44,8 +43,6 @@ namespace LuminCollection.UnsafeCollection
             {
                 _sparse.Add(-1);
             }
-            
-            _version = 0;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -63,7 +60,7 @@ namespace LuminCollection.UnsafeCollection
                 _sparse[i] = -1;
             }
             _dense.Clear();
-            _version++;
+            
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -96,7 +93,6 @@ namespace LuminCollection.UnsafeCollection
             int index = _dense.Count;
             _dense.Add(new Entry { Key = key, Value = value });
             _sparse[key] = index;
-            _version++;
             
             return true;
         }
@@ -114,14 +110,12 @@ namespace LuminCollection.UnsafeCollection
             if (index != -1)
             {
                 _dense[index] = new Entry { Key = key, Value = value };
-                _version++;
                 return InsertResult.Overwritten;
             }
 
             index = _dense.Count;
             _dense.Add(new Entry { Key = key, Value = value });
             _sparse[key] = index;
-            _version++;
             
             return InsertResult.Success;
         }
@@ -146,7 +140,6 @@ namespace LuminCollection.UnsafeCollection
 
             _dense.RemoveAt(lastIndex);
             _sparse[key] = -1;
-            _version++;
             
             return true;
         }
@@ -175,7 +168,6 @@ namespace LuminCollection.UnsafeCollection
 
             _dense.RemoveAt(lastIndex);
             _sparse[key] = -1;
-            _version++;
             
             return true;
         }
@@ -261,7 +253,6 @@ namespace LuminCollection.UnsafeCollection
 
             _dense.RemoveAt(lastIndex);
             _sparse[key] = -1;
-            _version++;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -284,7 +275,6 @@ namespace LuminCollection.UnsafeCollection
 
             _dense.RemoveAt(lastIndex);
             _sparse[key] = -1;
-            _version++;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -311,14 +301,12 @@ namespace LuminCollection.UnsafeCollection
         public struct Enumerator
         {
             private LuminSparseSet<T> _sparseSet;
-            private readonly int _version;
             private int _index;
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             internal Enumerator(LuminSparseSet<T> sparseSet)
             {
                 _sparseSet = sparseSet;
-                _version = sparseSet._version;
                 _index = -1;
             }
 
@@ -355,14 +343,12 @@ namespace LuminCollection.UnsafeCollection
             public struct KeyEnumerator
             {
                 private LuminSparseSet<T> _sparseSet;
-                private readonly int _version;
                 private int _index;
 
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 internal KeyEnumerator(LuminSparseSet<T> sparseSet)
                 {
                     _sparseSet = sparseSet;
-                    _version = sparseSet._version;
                     _index = -1;
                 }
 
@@ -400,14 +386,12 @@ namespace LuminCollection.UnsafeCollection
             public struct ValueEnumerator
             {
                 private LuminSparseSet<T> _sparseSet;
-                private readonly int _version;
                 private int _index;
 
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 internal ValueEnumerator(LuminSparseSet<T> sparseSet)
                 {
                     _sparseSet = sparseSet;
-                    _version = sparseSet._version;
                     _index = -1;
                 }
 
